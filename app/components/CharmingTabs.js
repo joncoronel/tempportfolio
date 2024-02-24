@@ -1,6 +1,7 @@
 import { Fragment, useEffect, useMemo, useRef, useState } from "react";
 import { Menu, Transition } from "@headlessui/react";
 import { useFloating, shift, FloatingPortal } from "@floating-ui/react";
+import Link from "next/link";
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
@@ -17,9 +18,8 @@ function classNames(...classes) {
  */
 export default function CharmingTabs({
   items,
-  tabComponent: TabComponent = "a",
-  selectedIndex = 0,
-  onChange,
+
+  selectedIndex,
 }) {
   const [mousePosition, setMousePosition] = useState({ x: null, y: null });
   const [activeElement, setActiveElement] = useState(undefined);
@@ -97,15 +97,11 @@ export default function CharmingTabs({
                 }}
               ></div>
               <div className="relative flex items-center rounded-full bg-white/90 px-2">
-                {items.map((item, idx) => (
+                {items.map((item) => (
                   <DesktopTab
-                    key={idx}
-                    as={TabComponent}
-                    isActive={idx === selectedIndex}
+                    key={item.label}
+                    isActive={item.label === selectedIndex}
                     setActiveElement={setActiveElement}
-                    onClick={
-                      item.target !== "_blank" ? () => onChange(idx) : undefined
-                    }
                     {...item}
                   />
                 ))}
@@ -183,13 +179,7 @@ export default function CharmingTabs({
   );
 }
 
-function DesktopTab({
-  as: Component,
-  label,
-  isActive,
-  setActiveElement,
-  ...rest
-}) {
+function DesktopTab({ label, isActive, setActiveElement, ...rest }) {
   const ref = useRef(null);
 
   useEffect(() => {
@@ -199,7 +189,7 @@ function DesktopTab({
   }, [isActive, setActiveElement]);
 
   return (
-    <Component
+    <Link
       ref={ref}
       className={classNames(
         "group flex cursor-pointer items-center gap-1.5 whitespace-nowrap rounded-full px-4 py-2.5 text-sm font-medium outline-none transition-colors duration-200 lg:px-6",
@@ -218,7 +208,7 @@ function DesktopTab({
         )}
       ></div>
       {label}
-    </Component>
+    </Link>
   );
 }
 

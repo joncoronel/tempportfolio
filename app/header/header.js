@@ -4,20 +4,14 @@ import { useState, useEffect } from "react";
 import CharmingTabs from "../components/CharmingTabs";
 
 const items = [
-  { label: "Home", href: "javascript:void(0)" },
-  { label: "Contact", href: "javascript:void(0)" },
-  { label: "Item 3", href: "javascript:void(0)" },
+  { label: "Home", href: "/" },
+  { label: "Contact", href: "/contact" },
+  { label: "Info", href: "/info" },
 ];
 
 export default function Header() {
   const pathname = usePathname();
-  const [selectedIndex, setSelectedIndex] = useState(0);
+  const selectedTab = items.find((item) => item.href === pathname)?.label;
 
-  return (
-    <CharmingTabs
-      items={items}
-      selectedIndex={selectedIndex}
-      onChange={setSelectedIndex}
-    />
-  );
+  return <CharmingTabs items={items} selectedIndex={selectedTab || "Home"} />;
 }
