@@ -61,7 +61,7 @@ export default function CharmingTabs({ items, selectedIndex }) {
         <>
           <div
             ref={ref}
-            className="group relative overflow-hidden rounded-full bg-[#60a5fa44] p-[2px] shadow-sm"
+            className="group relative overflow-hidden rounded-full bg-secondary-600/35 p-[2px] shadow-sm"
             style={{
               transform: "translateZ(0)",
               backfaceVisibility: "hidden",
@@ -75,24 +75,24 @@ export default function CharmingTabs({ items, selectedIndex }) {
                 style={{
                   transform: `translateX(calc(${activeX}px - 50%)) translateY(-50%)`,
                   backgroundImage: activeX
-                    ? " radial-gradient(#af91ff, transparent 80%) "
+                    ? " radial-gradient(hsl(var(--nextui-secondary-500)), transparent 70%) "
                     : undefined,
                 }}
               ></div>
 
               {/* Hover background */}
               <div
-                className="absolute inset-0 block opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+                className="absolute inset-0 hidden md:block opacity-0 transition-opacity duration-500 group-hover:opacity-100"
                 style={{
                   transform: `translateX(calc(${
                     mousePosition.x ? (mousePosition.x - 0.5) * 100 : 0
                   }%))`,
                   backgroundImage: activeX
-                    ? " radial-gradient(circle at 50% 50%, #af91ff66, transparent 70%) "
+                    ? " radial-gradient(circle at 50% 50%, hsl(var(--nextui-secondary-200)/.4), transparent 70%) "
                     : undefined,
                 }}
               ></div>
-              <div className="relative flex items-center rounded-full bg-white/90 px-2">
+              <div className="relative flex items-center rounded-full bg-primary-600/90 px-2">
                 {items.map((item) => (
                   <DesktopTab
                     key={item.label}
@@ -109,7 +109,7 @@ export default function CharmingTabs({ items, selectedIndex }) {
                 style={{
                   transform: `translateX(calc(${activeX}px - 50%))`,
                   backgroundImage: activeX
-                    ? " radial-gradient(100% 75% at 50% 130%, #60a5faff, transparent 60%) "
+                    ? " radial-gradient(100% 75% at 50% 130%, hsl(var(--nextui-secondary-500)), transparent 60%) "
                     : undefined,
                 }}
               ></div>
@@ -190,8 +190,8 @@ function DesktopTab({ label, isActive, setActiveElement, ...rest }) {
       className={classNames(
         "group flex cursor-pointer items-center gap-1.5 whitespace-nowrap rounded-full px-4 py-2.5 text-sm font-medium outline-none transition-colors duration-200 lg:px-6",
         isActive
-          ? "text-indigo-900 focus:text-indigo-950"
-          : "text-slate-500 hover:text-slate-700 focus:text-slate-700"
+          ? "text-secondary-400 focus:text-secondary-300"
+          : "text-secondary-600 hover:text-secondary-500 focus:text-secondary-500"
       )}
       {...rest}
     >
@@ -199,7 +199,7 @@ function DesktopTab({ label, isActive, setActiveElement, ...rest }) {
         className={classNames(
           "block h-1 w-1 rounded-full transition-transform duration-200",
           isActive
-            ? "scale-100 bg-indigo-600 group-focus:bg-indigo-800"
+            ? "scale-100 bg-secondary-500 group-focus:bg-secondary-400"
             : "scale-0 bg-gray-600 group-focus:scale-100"
         )}
       ></div>

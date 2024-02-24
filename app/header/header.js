@@ -3,9 +3,9 @@ import { usePathname } from "next/navigation";
 import CharmingTabs from "../components/CharmingTabs";
 
 const items = [
-  { label: "Home", href: "/" },
-  { label: "Contact", href: "/contact" },
-  { label: "Info", href: "/info" },
+  { label: "About", href: "/" },
+  { label: "Projects", href: "/contact" },
+  { label: "Contact", href: "/info" },
 ];
 
 export default function Header() {
