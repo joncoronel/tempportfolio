@@ -1,9 +1,20 @@
-import { Inter } from "next/font/google";
+import { Nunito, Atkinson_Hyperlegible } from "next/font/google";
 import "./globals.css";
 import { Providers } from "./providers";
 import HeaderParent from "./header/headerparent";
 
-const inter = Inter({ subsets: ["latin"] });
+const nunito = Nunito({
+  subsets: ["latin"],
+  variable: "--font-nunito",
+  display: "swap",
+});
+
+const atkinson = Atkinson_Hyperlegible({
+  weight: ["400", "700"],
+  subsets: ["latin"],
+  variable: "--font-atkinson",
+  display: "swap",
+});
 
 export const metadata = {
   title: "Create Next App",
@@ -12,12 +23,12 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>
+    <html lang="en" className={`${nunito.variable} ${atkinson.variable}`}>
+      <body className=" bg-primary-700">
         <Providers>
           <HeaderParent />
 
-          <main className="flex relative min-h-screen flex-col items-center justify-between p-24  bg-background text-foreground">
+          <main className="flex relative min-h-screen flex-col items-center justify-between   text-secondary">
             {children}
           </main>
         </Providers>

@@ -1,4 +1,5 @@
 import { nextui } from "@nextui-org/theme";
+const plugin = require("tailwindcss/plugin");
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
@@ -15,8 +16,133 @@ module.exports = {
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
+      textShadow: {
+        sm: "0 1px 2px var(--tw-shadow-color)",
+        DEFAULT: "0 2px 4px var(--tw-shadow-color)",
+        lg: "0 8px 16px var(--tw-shadow-color)",
+        heading: "0 4px 1em var(--tw-shadow-color)",
+      },
+      colors: {
+        // primary: "#bdd7e9",
+        // "primary-content": "#2a5b7d",
+        // "primary-dark": "#97c0dc",
+        // "primary-light": "#e3eef6",
+        // secondary: "#e9c0bd",
+        // "secondary-content": "#7d2f2a",
+        // "secondary-dark": "#dc9b97",
+        // "secondary-light": "#f6e4e3",
+        // background: "#111b22",
+        // foreground: "#192934",
+        // border: "#294456",
+        // copy: "#fafbfd",
+        // "copy-light": "#cbdbe6",
+        // "copy-lighter": "#87abc5",
+        // success: "#bde9bd",
+        // warning: "#e9e9bd",
+        // error: "#e9bdbd",
+        // "success-content": "#2a7d2a",
+        // "warning-content": "#7d7d2a",
+        // "error-content": "#7d2a2a",
+      },
     },
   },
   darkmode: "class",
-  plugins: [nextui()],
+  plugins: [
+    nextui({
+      layout: {},
+      themes: {
+        light: {
+          colors: {
+            background: "#FAFAFA",
+            focus: "#1C4A5A",
+            primary: {
+              100: "#E0EFF5",
+              200: "#C3DEEC",
+              300: "#93B2C7",
+              400: "#607A8F",
+              500: "#273645",
+              600: "#1C2A3B",
+              700: "#131F31",
+              800: "#0C1628",
+              900: "#070F21",
+              DEFAULT: "#273645",
+              foreground: "#E0EFF5",
+            },
+            secondary: {
+              100: "#F4FCFD",
+              200: "#E9F8FC",
+              300: "#DCF0F8",
+              400: "#CFE5F1",
+              500: "#BDD7E9",
+              600: "#8AABC8",
+              700: "#5F81A7",
+              800: "#3C5B87",
+              900: "#243F6F",
+              DEFAULT: "#BDD7E9",
+            },
+
+            content1: {
+              100: "#FDF8F2",
+              200: "#FCF0E5",
+              300: "#F7E3D5",
+              400: "#F0D5C7",
+              500: "#E7C0B2",
+              600: "#C68F82",
+              700: "#A66359",
+              800: "#853D38",
+              900: "#6E2223",
+              DEFAULT: "#E7C0B2",
+            },
+
+            success: {
+              100: "#EEFDE0",
+              200: "#DAFBC2",
+              300: "#BEF4A1",
+              400: "#A1EA86",
+              500: "#78DD5F",
+              600: "#54BE45",
+              700: "#359F2F",
+              800: "#1E8020",
+              900: "#126A1A",
+              DEFAULT: "#78DD5F",
+            },
+            danger: {
+              100: "#FFE8E2",
+              200: "#FFCDC5",
+              300: "#FFACA9",
+              400: "#FF9399",
+              500: "#FF7085",
+              600: "#DB5172",
+              700: "#B73862",
+              800: "#932353",
+              900: "#7A1549",
+              DEFAULT: "#FF7085",
+            },
+            warning: {
+              100: "#FFF9CC",
+              200: "#FFF399",
+              300: "#FFEA67",
+              400: "#FFE241",
+              500: "#FFD402",
+              600: "#DBB201",
+              700: "#B79201",
+              800: "#937300",
+              900: "#7A5D00",
+              DEFAULT: "#FFD402",
+            },
+          },
+        },
+      },
+    }),
+    plugin(function ({ matchUtilities, theme }) {
+      matchUtilities(
+        {
+          "text-shadow": (value) => ({
+            textShadow: value,
+          }),
+        },
+        { values: theme("textShadow") }
+      );
+    }),
+  ],
 };

@@ -16,6 +16,15 @@
   }
 }
 
+html {
+  font-family: var(--font-atkinson);
+  /* font-weight: 400; */
+}
+
+h1 {
+  font-family: var(--font-nunito);
+}
+
 body {
   color: rgb(var(--foreground-rgb));
   -webkit-font-smoothing: antialiased;
