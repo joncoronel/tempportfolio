@@ -16,11 +16,7 @@ function classNames(...classes) {
  * @param {number} props.selectedIndex The selected tab index
  * @param {function} props.onChange Called when the active tab changes
  */
-export default function CharmingTabs({
-  items,
-
-  selectedIndex,
-}) {
+export default function CharmingTabs({ items, selectedIndex }) {
   const [mousePosition, setMousePosition] = useState({ x: null, y: null });
   const [activeElement, setActiveElement] = useState(undefined);
   const ref = useRef(null);
