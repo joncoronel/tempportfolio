@@ -17,7 +17,7 @@ export default function RootLayout({ children }) {
         <Providers>
           <HeaderParent />
 
-          <main className="flex min-h-screen flex-col items-center justify-between p-24  bg-background text-foreground">
+          <main className="flex relative min-h-screen flex-col items-center justify-between p-24  bg-background text-foreground">
             {children}
           </main>
         </Providers>
