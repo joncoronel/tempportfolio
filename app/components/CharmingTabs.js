@@ -68,7 +68,7 @@ export default function CharmingTabs({ items, selectedIndex }) {
             }}
           >
             {/* Desktop items (>= md) */}
-            <div className="hidden md:block">
+            <div className="block">
               {/* Active background */}
               <div
                 className="absolute top-1/2 block aspect-square h-[250%] transition-transform duration-200"
@@ -116,7 +116,7 @@ export default function CharmingTabs({ items, selectedIndex }) {
             </div>
 
             {/* Mobile button (< md) */}
-            <div className="block md:hidden">
+            <div className="hidden">
               <>
                 <Menu.Button
                   ref={refs.setReference}
