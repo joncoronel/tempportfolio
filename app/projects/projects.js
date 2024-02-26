@@ -3,22 +3,26 @@ import ProjectCard from "./projectcard";
 const projects = [
   {
     title: "Project 1",
-    description: "Description",
+    description:
+      "This is the description for the first project that will be reused.",
     image: "image",
   },
   {
     title: "Project 2",
-    description: "Description",
+    description:
+      "This is the description for the second project that will be reused.",
     image: "image",
   },
   {
     title: "Project 3",
-    description: "Description",
+    description:
+      "This is the description for the second project that will be reused.",
     image: "image",
   },
   {
     title: "Project 4",
-    description: "Description",
+    description:
+      "This is the description for the second project that will be reused.",
     image: "image",
   },
 ];
