@@ -1,12 +1,15 @@
 import Projects from "./projects/projects";
+import Contact from "./sections/contact/contact";
 
 export default function Home() {
   return (
-    <div className="flex flex-col items-center justify-between p-4 gap-[20rem]">
+    <div className="flex flex-col items-center justify-between p-4 gap-[10rem]">
       <section className="flex flex-col mt-16 max-w-7xl">
         <Projects />
       </section>
-      <section>section 2</section>
+      <section className="flex flex-col mt-16 max-w-7xl">
+        <Contact />
+      </section>
       <section>section 2</section>
       <section>section 4</section>
     </div>
