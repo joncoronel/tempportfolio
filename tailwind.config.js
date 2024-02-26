@@ -16,6 +16,9 @@ module.exports = {
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
+      boxShadow: {
+        card: " 0 24px 48px #0000000d",
+      },
       textShadow: {
         sm: "0 1px 2px var(--tw-shadow-color)",
         DEFAULT: "0 2px 4px var(--tw-shadow-color)",
@@ -44,6 +47,19 @@ module.exports = {
         // "warning-content": "#7d7d2a",
         // "error-content": "#7d2a2a",
       },
+      keyframes: {
+        "pulse-button-pulse": {
+          from: {
+            boxShadow: "0 0 0 0 hsl(var(--nextui-secondary-500))",
+          },
+          to: {
+            boxShadow: "0 0 .75rem .75rem transparent",
+          },
+        },
+      },
+      animation: {
+        "pulse-button-pulse": "pulse-button-pulse .75s ease-out",
+      },
     },
   },
   darkmode: "class",
@@ -56,17 +72,17 @@ module.exports = {
             background: "#FAFAFA",
             focus: "#1C4A5A",
             primary: {
-              100: "#E0EFF5",
-              200: "#C3DEEC",
-              300: "#93B2C7",
-              400: "#607A8F",
-              500: "#273645",
-              600: "#1C2A3B",
-              700: "#131F31",
-              800: "#0C1628",
-              900: "#070F21",
-              DEFAULT: "#273645",
-              foreground: "#E0EFF5",
+              100: "#E1EEF5",
+              200: "#C5DCEC",
+              300: "#95B0C7",
+              400: "#637990",
+              500: "#293646",
+              600: "#1D2A3C",
+              700: "#141F32",
+              800: "#0D1528",
+              900: "#070E21",
+              DEFAULT: "#293646",
+              foreground: "#E1EEF5",
             },
             secondary: {
               100: "#F4FCFD",

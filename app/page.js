@@ -1,10 +1,10 @@
+import Projects from "./projects/projects";
+
 export default function Home() {
   return (
-    <div className="flex flex-col items-center justify-between p-4 gap-12">
-      <section>
-        <h1 className="text-5xl font-extrabold text-shadow-heading shadow-secondary-300/60">
-          Projects
-        </h1>
+    <div className="flex flex-col items-center justify-between p-4 gap-[20rem]">
+      <section className="flex flex-col mt-16 max-w-7xl">
+        <Projects />
       </section>
       <section>section 2</section>
       <section>section 2</section>

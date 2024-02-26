@@ -24,7 +24,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${nunito.variable} ${atkinson.variable}`}>
-      <body className=" bg-primary-700">
+      <body className=" bg-primary-800">
         <Providers>
           <HeaderParent />
 
