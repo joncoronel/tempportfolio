@@ -11,6 +11,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      dropShadow: {
+        "logo-glow": "0 0 8px hsl(var(--nextui-secondary-500))",
+      },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
