@@ -10,6 +10,14 @@
   transform: translateZ(0) scale(1, 1);
 }
 
+.pulsebutton.secondary {
+  background-color: hsl(var(--nextui-secondary-600));
+  box-shadow: 0 0 0 2px hsl(var(--nextui-secondary-600)),
+    inset 0 0 5px 2px hsl(var(--nextui-secondary-800) / 0.8),
+    0 0 4px 2px hsl(var(--nextui-secondary-600) / 0.33);
+  color: hsl(var(--nextui-primary-800));
+}
+
 .pulsebutton:hover {
   box-shadow: 0 0 0 2px hsl(var(--nextui-secondary-500)),
     inset 0 0 5px 2px hsl(var(--nextui-secondary-800) / 0.8),
