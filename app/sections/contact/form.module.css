@@ -1,0 +1,28 @@
+.input {
+  outline: none;
+  background-color: hsl(var(--nextui-primary-900));
+  position: relative;
+
+  box-shadow:
+    0 0 0 2px hsl(var(--nextui-secondary-800)),
+    inset 0 0 2.5px 2px hsl(var(--nextui-secondary-900) / 0.6),
+    0 0 4px 2px hsl(var(--nextui-secondary-600) / 0.33);
+  transform: translateZ(0) scale(1, 1);
+  transition: box-shadow 0.2s ease;
+}
+
+.input:focus {
+  box-shadow:
+    0 0 0 2px hsl(var(--nextui-secondary-500)),
+    inset 0 0 5px 2px hsl(var(--nextui-secondary-800) / 0.8),
+    0 0 4px 2px hsl(var(--nextui-secondary-500) / 1);
+}
+
+/* aria invalid */
+
+.input[aria-invalid="true"] {
+  box-shadow:
+    0 0 0 2px hsl(var(--nextui-danger-500)),
+    inset 0 0 5px 2px hsl(var(--nextui-danger-900) / 0.8),
+    0 0 4px 2px hsl(var(--nextui-danger-500) / 0.45);
+}

@@ -30,10 +30,10 @@ const projects = [
 export default function Projects() {
   return (
     <>
-      <h1 className="flex justify-center text-5xl font-extrabold  text-shadow-heading shadow-secondary-300/60">
+      <h1 className="flex justify-center text-4xl font-extrabold  shadow-secondary-300/60 text-shadow-heading">
         Projects
       </h1>
-      <div className="mt-16 flex flex-wrap gap-8 justify-center">
+      <div className="mt-16 flex flex-wrap justify-center gap-8">
         {projects.map((project) => (
           <ProjectCard
             key={project.title}

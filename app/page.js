@@ -3,11 +3,11 @@ import Contact from "./sections/contact/contact";
 
 export default function Home() {
   return (
-    <div className="flex flex-col items-center justify-between p-4 gap-[10rem]">
-      <section className="flex flex-col mt-16 max-w-7xl">
+    <div className="flex flex-col items-center justify-between gap-[10rem] p-4">
+      <section className="mt-16 flex w-full max-w-7xl flex-col">
         <Projects />
       </section>
-      <section className="flex flex-col mt-16 max-w-7xl">
+      <section className="mt-16 flex w-full max-w-7xl flex-col">
         <Contact />
       </section>
       <section>section 2</section>

@@ -7,7 +7,7 @@ const PULSE_DURATION_MS = 2000;
 import styles from "./PulseButton.module.css";
 
 export default forwardRef(function PulseButton(
-  { onPointerDown, children, icon, variant = "primary" },
+  { onPointerDown, children, icon, variant = "primary", submitButton = false },
   ref,
 ) {
   const [pulses, setPulses] = useState([]);
@@ -31,8 +31,11 @@ export default forwardRef(function PulseButton(
 
   return (
     <button
-      onPointerDown={handlePointerDown}
-      className={`relative flex min-h-[28px] items-center justify-center gap-1  rounded-lg py-1 text-sm text-secondary-500 ring-secondary-500 ring-offset-2 transition [transition:transform_.0s,box-shadow_.15s]  focus-visible:ring-2 active:scale-[0.97]  ${
+      onClick={handlePointerDown}
+      {...(submitButton && {
+        type: "submit",
+      })}
+      className={`relative flex min-h-[28px] w-fit items-center justify-center gap-1  rounded-lg py-1 text-sm text-secondary-500 ring-secondary-500 ring-offset-2 transition [transition:transform_.0s,box-shadow_.15s]  focus-visible:ring-2 active:scale-[0.97]  ${
         hastext ? "px-2" : "px-2"
       } ${styles.pulsebutton} ${variant === "secondary" && styles.secondary} `}
     >

@@ -4,7 +4,7 @@ import Logo from "./logo";
 
 export default function HeaderParent() {
   return (
-    <header className=" p-4 w-full max-w-7xl mx-auto sticky top-0 z-10">
+    <header className=" sticky top-0 z-10 mx-auto w-full max-w-7xl p-4">
       <div className="flex flex-row items-center justify-between">
         <Logo />
         <Header />

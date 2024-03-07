@@ -16,7 +16,8 @@
   }
 }
 
-html {
+html,
+input {
   font-family: var(--font-atkinson);
   /* font-weight: 400; */
 }
