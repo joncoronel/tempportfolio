@@ -33,7 +33,7 @@ export default forwardRef(function PulseButton(
     <button
       onPointerDown={handlePointerDown}
       className={`relative flex min-h-[28px] items-center justify-center gap-1  rounded-lg py-1 text-sm text-secondary-500 ring-secondary-500 ring-offset-2 transition [transition:transform_.0s,box-shadow_.15s]  focus-visible:ring-2 active:scale-[0.97]  ${
-        hastext ? "px-3" : "px-2"
+        hastext ? "px-2" : "px-2"
       } ${styles.pulsebutton} ${variant === "secondary" && styles.secondary} `}
     >
       <div className="absolute inset-0 rounded-lg">
@@ -44,7 +44,8 @@ export default forwardRef(function PulseButton(
           ></div>
         ))}
       </div>
-      {children}
+      {hastext && <span className="mx-1">{children}</span>}
+
       {icon && (
         <div className="flex max-h-full w-auto items-center ">{icon}</div>
       )}
