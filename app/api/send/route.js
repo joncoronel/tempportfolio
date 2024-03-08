@@ -17,10 +17,8 @@ export async function POST(request) {
       privateKey: privateKey,
     });
 
-    console.log("Email sent successfully", response.status, response.text);
     return new NextResponse("Email sent", { status: 200 });
   } catch (error) {
-    console.error("Error sending email", error);
     return new NextResponse("Error sending email: " + error.message, {
       status: 500,
     });
