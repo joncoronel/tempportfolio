@@ -24,9 +24,11 @@ export async function POST(request) {
       })
       .then(
         (response) => {
+          console.log("SUCCESS!", response.status, response.text);
           return new NextResponse("Email sent", { status: 200 });
         },
         (err) => {
+          console.log("FAILED...", err);
           return new NextResponse("Error sending email", { status: 500 });
         },
       );
