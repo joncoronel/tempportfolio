@@ -1,13 +1,21 @@
 "use client";
 
 import { forwardRef, useCallback, useState } from "react";
+import { RefreshCcw } from "lucide-react";
 
 const PULSE_DURATION_MS = 2000;
 
 import styles from "./PulseButton.module.css";
 
 export default forwardRef(function PulseButton(
-  { onPointerDown, children, icon, variant = "primary", submitButton = false },
+  {
+    onPointerDown,
+    children,
+    loading = false,
+    icon,
+    variant = "primary",
+    submitButton = false,
+  },
   ref,
 ) {
   const [pulses, setPulses] = useState([]);
@@ -51,6 +59,11 @@ export default forwardRef(function PulseButton(
 
       {icon && (
         <div className="flex max-h-full w-auto items-center ">{icon}</div>
+      )}
+      {loading && (
+        <div className="flex max-h-full w-auto animate-spin items-center">
+          <RefreshCcw size={"1rem"} />
+        </div>
       )}
     </button>
   );

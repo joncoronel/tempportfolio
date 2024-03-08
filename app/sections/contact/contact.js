@@ -2,18 +2,66 @@
 
 import { useForm } from "react-hook-form";
 import PulseButton from "@/app/components/ui/PulseButton";
-import styles from "./form.module.css";
+import { toast } from "sonner";
+import InputWrapper from "./inputwrapper";
+import { minDelay } from "@/app/utils/delays";
+import { MailCheck, MailWarning } from "lucide-react";
 
 export default function Contact() {
   const {
     register,
     handleSubmit,
+    reset,
 
-    formState: { errors },
-  } = useForm();
+    formState: { errors, isSubmitting },
+  } = useForm({
+    mode: "onTouched",
+    delayError: 200,
+  });
 
-  const onSubmit = (data) => alert(JSON.stringify(data));
-  // watch input value by passing the name of it
+  const onSubmit = async (data) => {
+    try {
+      const sendEmailPromise = fetch("/api/send", {
+        method: "POST",
+        body: JSON.stringify(data),
+      });
+
+      const response = await minDelay(sendEmailPromise, 1000);
+      const status = response.status;
+
+      if (status === 200) {
+        reset();
+
+        toast("Message sent successfully", {
+          icon: <MailCheck className="text-success-800" />,
+          classNames: {
+            toast: "!gap-4 !bg-success-100 !border-success-300",
+            title: "!text-success-800",
+            message: "!text-success-800",
+          },
+        });
+      } else {
+        toast("Error sending message", {
+          icon: <MailWarning className="text-danger-800" />,
+          classNames: {
+            toast: "!gap-4 !bg-danger-100 !border-danger-300",
+            title: "!text-danger-800",
+            message: "!text-danger-800",
+          },
+        });
+      }
+    } catch (error) {
+      toast("Error sending message", {
+        icon: <MailWarning className="text-danger-800" />,
+        classNames: {
+          toast: "!gap-4 !bg-danger-100 !border-danger-300",
+          title: "!text-danger-800",
+          message: "!text-danger-800",
+        },
+      });
+    }
+  };
+
   return (
     <>
       <h1 className="flex justify-center text-4xl font-extrabold  shadow-secondary-300/60 text-shadow-heading">
@@ -24,53 +72,56 @@ export default function Contact() {
           className="flex w-full max-w-lg flex-col gap-8"
           onSubmit={handleSubmit(onSubmit)}
         >
-          {/* register your input into the hook by invoking the "register" function */}
-
-          <input
-            className={` flex rounded-md bg-primary-500 p-2 ${styles.input}`}
+          <InputWrapper
+            errors={errors}
+            name={"name"}
             placeholder={"Your Name"}
-            aria-invalid={errors.name ? "true" : "false"}
-            {...register("name", {
+            type={"Input"}
+            validationRules={{
               maxLength: {
                 value: 30,
                 message: "Max character length is 30",
               },
-            })}
+            }}
+            register={register}
           />
-          {errors.name && (
-            <span className=" text-danger">{errors.name.message}</span>
-          )}
 
-          {/* include validation with required or other standard HTML validation rules */}
-          <input
-            className={` flex rounded-md bg-primary-500 p-2 ${styles.input}`}
+          <InputWrapper
+            errors={errors}
+            name={"email"}
             placeholder={"Your Email"}
-            aria-invalid={errors.email ? "true" : "false"}
-            {...register("email", {
+            type={"Input"}
+            validationRules={{
               required: "Email is required",
               pattern: {
                 value: /\S+@\S+\.\S+/,
-                message: "Enter a valid email",
+                message: "Entered value does not match email format",
               },
-            })}
+            }}
+            register={register}
           />
 
-          <textarea
-            className={` flex rounded-md bg-primary-500 p-2 ${styles.input}`}
+          <InputWrapper
+            errors={errors}
+            name={"message"}
             placeholder={"Your Message"}
-            aria-invalid={errors.message ? "true" : "false"}
-            {...register("message", {
+            type={"Textarea"}
+            validationRules={{
               required: "Message is required",
               maxLength: {
                 value: 1000,
                 message: "Max character length is 1000",
               },
-            })}
+            }}
+            register={register}
           />
-          {/* errors will return when field validation fails  */}
-          {errors.exampleRequired && <span>This field is required</span>}
-          <PulseButton submitButton variant={"secondary"}>
-            Submit
+
+          <PulseButton
+            loading={isSubmitting}
+            submitButton
+            variant={"secondary"}
+          >
+            {isSubmitting ? "Sending..." : "Send"}
           </PulseButton>
         </form>
       </div>

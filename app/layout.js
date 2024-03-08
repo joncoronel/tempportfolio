@@ -2,6 +2,7 @@ import { Nunito, Atkinson_Hyperlegible } from "next/font/google";
 import "./globals.css";
 import { Providers } from "./providers";
 import HeaderParent from "./header/headerparent";
+import { Toaster } from "sonner";
 
 const nunito = Nunito({
   subsets: ["latin"],
@@ -26,9 +27,18 @@ export default function RootLayout({ children }) {
     <html lang="en" className={`${nunito.variable} ${atkinson.variable}`}>
       <body className=" bg-primary-800">
         <Providers>
+          <Toaster
+            position="bottom-right"
+            toastOptions={{
+              className: "!shadow-md",
+              classNames: {
+                title: "text-p-small",
+              },
+            }}
+          />
           <HeaderParent />
 
-          <main className="flex relative min-h-screen flex-col items-center justify-between   text-secondary">
+          <main className="relative flex min-h-screen flex-col items-center justify-between   text-secondary">
             {children}
           </main>
         </Providers>
