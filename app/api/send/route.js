@@ -15,6 +15,7 @@ export async function POST(request) {
 
   const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY;
   const privateKey = process.env.NEXT_PUBLIC_EMAILJS_PRIVATE_KEY;
+  console.log("serviceID", serviceID);
 
   try {
     emailjs
