@@ -1,40 +1,78 @@
-// export default function Sticky({ title, index }) {
-//   return (
-//     <div
-//       className="sticky bottom-0 min-h-[60rem] bg-slate-400 border-4 p-4 border-red-400 "
-//       style={{
-//         zIndex: index,
-//       }}
-//     >
-//       <h1>{title}</h1>
-//       <p>
-//         Contrary to popular belief, Lorem Ipsum is not simply random text. It
-//         has roots in a piece of classical Latin literature from 45 BC, making it
-//         over 2000 years old. Richard McClintock, a Latin professor at
-//         Hampden-Sydney College in Virginia, looked up one of the more obscure
-//         Latin words, consectetur, from a Lorem Ipsum passage, and going through
-//         the cites of the word in classical literature, discovered the
-//         undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33
-//         of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by
-//         Cicero, written in 45 BC. This book is a treatise on the theory of
-//         ethics, very popular during the Renaissance. The first line of Lorem
-//         Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section
-//         1.10.32.
-//       </p>
-//       <p>
-//         Contrary to popular belief, Lorem Ipsum is not simply random text. It
-//         has roots in a piece of classical Latin literature from 45 BC, making it
-//         over 2000 years old. Richard McClintock, a Latin professor at
-//         Hampden-Sydney College in Virginia, looked up one of the more obscure
-//         Latin words, consectetur, from a Lorem Ipsum passage, and going through
-//         the cites of the word in classical literature, discovered the
-//         undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33
-//         of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by
-//         Cicero, written in 45 BC. This book is a treatise on the theory of
-//         ethics, very popular during the Renaissance. The first line of Lorem
-//         Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section
-//         1.10.32.
-//       </p>
-//     </div>
-//   );
-// }
+"use client";
+
+import { useRef, useEffect, useState } from "react";
+import styles from "./sticky.module.css";
+
+function isScrollAnimationNotSupported() {
+  return (
+    !("animation" in document.documentElement.style) ||
+    typeof ScrollTimeline === "undefined"
+  );
+}
+
+function MotionSticky({ title, index, children, motion }) {
+  const ref = useRef(null);
+
+  const { scrollYProgress } = motion.useScroll({
+    target: ref,
+    offset: ["end start", "1 .7"],
+  });
+
+  const y = motion.useTransform(scrollYProgress, [1, 0], [0, 200]);
+
+  const opacity = motion.useTransform(scrollYProgress, [1, 0], [1, 0]);
+
+  return (
+    <motion.motion.div
+      ref={ref}
+      className={`relative scale-100`}
+      style={{
+        zIndex: index,
+        y: y,
+        originY: 1,
+        translateZ: 0,
+        scale: 1,
+        opacity: opacity,
+      }}
+      id={title}
+    >
+      {children}
+    </motion.motion.div>
+  );
+}
+
+export default function Sticky({ title, index, children }) {
+  const [motion, setMotion] = useState(null);
+
+  useEffect(() => {
+    async function loadMotion() {
+      if (isScrollAnimationNotSupported()) {
+        const { motion, useScroll, useTransform, easeOut } = await import(
+          "framer-motion"
+        );
+        setMotion({ motion, useScroll, useTransform, easeOut });
+      }
+    }
+    loadMotion();
+  }, []);
+
+  if (motion) {
+    return (
+      <MotionSticky title={title} index={index} motion={motion}>
+        {children}
+      </MotionSticky>
+    );
+  }
+
+  return (
+    <div
+      className={`relative scale-100 ${styles.sticky}`}
+      style={{
+        zIndex: index,
+      }}
+      id={title}
+    >
+      {children}
+    </div>
+  );
+}
