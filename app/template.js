@@ -15,6 +15,7 @@ export default function Template({ children }) {
       variants={variants}
       initial="hidden"
       animate="enter"
+      className="w-full"
     >
       {children}
     </motion.div>
