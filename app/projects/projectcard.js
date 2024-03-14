@@ -1,5 +1,5 @@
 import PulseButton from "../components/ui/PulseButton";
-import { Code, Radio, Github } from "lucide-react";
+import { Radio, Github } from "lucide-react";
 
 export default function ProjectCard({ title, description, image }) {
   return (
@@ -7,7 +7,7 @@ export default function ProjectCard({ title, description, image }) {
       <div className="flex flex-col items-center justify-center gap-4">
         <div className="flex w-full flex-row justify-between">
           <h2 className="text-2xl font-bold text-secondary-500">{title}</h2>{" "}
-          <div className="flex flex-row items-center justify-end gap-3">
+          <div className="flex flex-row items-center justify-end gap-4">
             <PulseButton icon={<Radio size={"1rem"} />}>Live</PulseButton>
             <PulseButton icon={<Github size={"1rem"} />}></PulseButton>
           </div>

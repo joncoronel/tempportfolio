@@ -5,7 +5,14 @@ import PulseButton from "@/app/components/ui/PulseButton";
 import { toast } from "sonner";
 import InputWrapper from "./inputwrapper";
 import { minDelay } from "@/app/utils/delays";
-import { MailCheck, MailWarning } from "lucide-react";
+import {
+  MailCheck,
+  MailWarning,
+  Linkedin,
+  Mail,
+  Github,
+  Twitter,
+} from "lucide-react";
 
 export default function Contact() {
   const {
@@ -67,9 +74,9 @@ export default function Contact() {
       <h1 className="flex justify-center text-4xl font-extrabold  shadow-secondary-300/60 text-shadow-heading">
         Get In Touch
       </h1>
-      <div className="mt-16 flex  flex-wrap justify-center gap-8">
+      <div className="relative mt-16 flex flex-col items-center justify-center gap-16 lg:flex-row lg:items-start lg:justify-center">
         <form
-          className="flex w-full max-w-lg flex-col gap-8"
+          className="flex w-full max-w-md flex-col gap-8"
           onSubmit={handleSubmit(onSubmit)}
         >
           <InputWrapper
@@ -124,6 +131,60 @@ export default function Contact() {
             {isSubmitting ? "Sending..." : "Send"}
           </PulseButton>
         </form>
+        {/* divider line */}
+        <div className="relative h-0.5 w-[90%] max-w-md bg-primary-500 lg:h-auto lg:w-0.5 lg:self-stretch"></div>
+
+        <div className="flex flex-col gap-8">
+          <h3 className="text-lg text-secondary-500">
+            You can also find me here
+          </h3>
+          <div className="flex gap-4">
+            <a
+              href="
+              https://www.linkedin.com/in/abhishek-kumar-1a6b2a1b6/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <PulseButton
+                variant={"secondary"}
+                icon={<Linkedin size={"1.1rem"} />}
+              ></PulseButton>
+            </a>
+
+            <a
+              href="mailto: joncorone@gmail.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <PulseButton
+                variant={"secondary"}
+                icon={<Mail size={"1.1rem"} />}
+              ></PulseButton>
+            </a>
+
+            <a
+              href="https://www.github.com/joncoronel"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <PulseButton
+                variant={"secondary"}
+                icon={<Github size={"1.1rem"} />}
+              ></PulseButton>
+            </a>
+
+            <a
+              href="https://www.twitter.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <PulseButton
+                variant={"secondary"}
+                icon={<Twitter size={"1.1rem"} />}
+              ></PulseButton>
+            </a>
+          </div>
+        </div>
       </div>
     </>
   );

@@ -28,6 +28,9 @@ module.exports = {
         lg: "0 8px 16px var(--tw-shadow-color)",
         heading: "0 4px 1em var(--tw-shadow-color)",
       },
+      gridTemplateColumns: {
+        auto: "repeat(auto-fill, minmax(16rem, 1fr))",
+      },
       colors: {
         // primary: "#bdd7e9",
         // "primary-content": "#2a5b7d",

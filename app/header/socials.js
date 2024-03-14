@@ -3,7 +3,7 @@ import { Linkedin } from "lucide-react";
 
 export default function Socials() {
   return (
-    <div className="flex flex-row flex-1 items-center justify-end space-x-4">
+    <div className="hidden flex-1 flex-row items-center justify-end space-x-4 sm:flex ">
       <PulseButton variant={"secondary"}>Resume</PulseButton>
       <PulseButton
         variant={"secondary"}
