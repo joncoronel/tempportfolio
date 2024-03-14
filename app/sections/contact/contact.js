@@ -74,7 +74,7 @@ export default function Contact() {
       <h1 className="flex justify-center text-4xl font-extrabold  shadow-secondary-300/60 text-shadow-heading">
         Get In Touch
       </h1>
-      <div className="relative mt-16 flex flex-col items-center justify-center gap-16 lg:flex-row lg:items-start lg:justify-center">
+      <div className="relative mt-16 flex flex-col items-center justify-center gap-8 lg:flex-row lg:items-start lg:justify-center lg:gap-16">
         <form
           className="flex w-full max-w-md flex-col gap-8"
           onSubmit={handleSubmit(onSubmit)}
