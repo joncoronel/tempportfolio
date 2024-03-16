@@ -15,11 +15,13 @@ export default forwardRef(function PulseButton(
     icon,
     variant = "primary",
     submitButton = false,
+    href = null,
+    ...rest
   },
   ref,
 ) {
   const [pulses, setPulses] = useState([]);
-
+  const Component = href ? "a" : "button";
   const hastext = children ? true : false;
 
   const handlePointerDown = useCallback(
@@ -38,11 +40,13 @@ export default forwardRef(function PulseButton(
   );
 
   return (
-    <button
+    <Component
       onClick={handlePointerDown}
       {...(submitButton && {
         type: "submit",
       })}
+      href={href}
+      {...rest}
       className={`relative flex min-h-[1.8rem] w-fit items-center justify-center gap-1  rounded-lg px-2 py-1 text-sm text-secondary-500 ring-secondary-500 ring-offset-2 transition  [transition:transform_.0s,box-shadow_.15s] focus-visible:ring-2 active:scale-[0.97]   ${styles.pulsebutton} ${variant === "secondary" && styles.secondary} `}
     >
       <div className="absolute inset-0 rounded-lg">
@@ -63,6 +67,6 @@ export default forwardRef(function PulseButton(
           <RefreshCcw size={"1rem"} />
         </div>
       )}
-    </button>
+    </Component>
   );
 });

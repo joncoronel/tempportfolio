@@ -139,50 +139,37 @@ export default function Contact() {
             You can also find me here
           </h3>
           <div className="flex gap-4">
-            <a
+            <PulseButton
+              variant={"secondary"}
+              icon={<Linkedin size={"1.1rem"} />}
               href="
-              https://www.linkedin.com/in/abhishek-kumar-1a6b2a1b6/"
+                https://www.linkedin.com/in/abhishek-kumar-1a6b2a1b6/"
               target="_blank"
               rel="noopener noreferrer"
-            >
-              <PulseButton
-                variant={"secondary"}
-                icon={<Linkedin size={"1.1rem"} />}
-              ></PulseButton>
-            </a>
+            ></PulseButton>
 
-            <a
+            <PulseButton
+              variant={"secondary"}
+              icon={<Mail size={"1.1rem"} />}
               href="mailto: joncorone@gmail.com"
               target="_blank"
               rel="noopener noreferrer"
-            >
-              <PulseButton
-                variant={"secondary"}
-                icon={<Mail size={"1.1rem"} />}
-              ></PulseButton>
-            </a>
+            ></PulseButton>
 
-            <a
+            <PulseButton
+              variant={"secondary"}
+              icon={<Github size={"1.1rem"} />}
               href="https://www.github.com/joncoronel"
               target="_blank"
               rel="noopener noreferrer"
-            >
-              <PulseButton
-                variant={"secondary"}
-                icon={<Github size={"1.1rem"} />}
-              ></PulseButton>
-            </a>
-
-            <a
+            ></PulseButton>
+            <PulseButton
+              variant={"secondary"}
+              icon={<Twitter size={"1.1rem"} />}
               href="https://www.twitter.com"
               target="_blank"
               rel="noopener noreferrer"
-            >
-              <PulseButton
-                variant={"secondary"}
-                icon={<Twitter size={"1.1rem"} />}
-              ></PulseButton>
-            </a>
+            ></PulseButton>
           </div>
         </div>
       </div>
