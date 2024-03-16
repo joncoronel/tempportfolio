@@ -48,6 +48,7 @@ export default function RootLayout({ children }) {
         src="https://beamanalytics.b-cdn.net/beam.min.js"
         data-token="a33dc8c2-33ae-44b0-9e87-e3523e69b4c5"
         async
+        strategy="afterInteractive"
       />
     </html>
   );
