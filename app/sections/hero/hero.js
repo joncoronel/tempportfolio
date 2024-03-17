@@ -11,10 +11,11 @@ export default function Hero() {
     >
       <div className="flex flex-col items-center justify-center">
         <h1 className="text-center text-5xl font-bold text-primary-400">
-          Hi, I'm <span className="text-secondary-500">Jonathan Coronel</span>
+          Hi, I&apos;m{" "}
+          <span className="text-secondary-500">Jonathan Coronel</span>
         </h1>
         <p className="mt-4 text-center text-2xl text-primary-400">
-          I'm a web developer who loves to build web applications.
+          I&apos;m a web developer who loves to build web applications.
         </p>
       </div>
       <div className="mt-8 flex flex-row items-center justify-center space-x-4">
