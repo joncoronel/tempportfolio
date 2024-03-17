@@ -28,12 +28,18 @@ h3,
 h4,
 h5,
 h6 {
+  text-wrap: balance;
   font-family: var(--font-nunito);
 }
 
+p,
+span {
+  text-wrap: pretty;
+}
 body {
   color: rgb(var(--foreground-rgb));
   -webkit-font-smoothing: antialiased;
+  min-height: 100dvh;
 }
 
 @layer utilities {

@@ -71,9 +71,9 @@ export default function Contact() {
 
   return (
     <>
-      <h1 className="flex justify-center text-4xl font-extrabold  shadow-secondary-300/60 text-shadow-heading">
+      <h2 className="flex justify-center text-4xl font-extrabold  shadow-secondary-300/60 text-shadow-heading">
         Get In Touch
-      </h1>
+      </h2>
       <div className="relative mt-16 flex flex-col items-center justify-center gap-8 lg:flex-row lg:items-start lg:justify-center lg:gap-16">
         <form
           className="flex w-full max-w-md flex-col gap-8"
