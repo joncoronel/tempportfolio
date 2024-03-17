@@ -1,19 +1,8 @@
 .sticky {
   /* overflow-x: clip; */
-  animation: linear slideIn both;
+  animation: linear slideIn forwards;
   animation-timeline: view();
   animation-range: exit 50% 100%;
-
-  /* animation: linear fade-in both;
-  animation-timeline: view();
-  animation-range-start: 0%;
-  animation-range-end: 25%;
-  transform-style: preserve-3d; */
-
-  /* animation: scaleIn both linear;
-  animation-timeline: view();
-  animation-range-start: 0%;
-  animation-range-end: 25%; */
 }
 
 @keyframes scaleIn {
@@ -37,7 +26,15 @@
   }
 }
 
-@keyframes fade-in {
+.revealCard {
+  animation: linear reveal forwards;
+  animation-timeline: view();
+  animation-range-start: 0%;
+  animation-range-end: 25%;
+  transform-style: preserve-3d;
+}
+
+@keyframes reveal {
   from {
     scale: 0.9;
     opacity: 0;
