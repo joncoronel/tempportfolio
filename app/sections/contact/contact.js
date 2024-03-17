@@ -134,7 +134,7 @@ export default function Contact() {
         {/* divider line */}
         <div className="relative h-0.5 w-[90%] max-w-md bg-primary-500 lg:h-auto lg:w-0.5 lg:self-stretch"></div>
 
-        <div className="flex flex-col gap-8">
+        <div className="flex flex-col items-center justify-center gap-8">
           <h3 className="text-lg text-secondary-500">
             You can also find me here
           </h3>
