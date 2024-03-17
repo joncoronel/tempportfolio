@@ -5,7 +5,7 @@ import Sticky from "./components/sticky";
 
 export default function Home() {
   return (
-    <div className="flex flex-col items-center justify-between gap-[10rem]  p-4">
+    <div className="mb-[5rem] flex flex-col items-center justify-between gap-[10rem]  p-4 lg:mb-[10rem]">
       <section className="mt-16 flex w-full max-w-7xl flex-col">
         <Sticky title="section1" index="1">
           <Projects />
@@ -16,8 +16,6 @@ export default function Home() {
           <Contact />
         </Sticky>
       </section>
-      <section>section 2</section>
-      <section>section 4</section>
     </div>
   );
 }

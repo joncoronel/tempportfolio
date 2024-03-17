@@ -25,7 +25,10 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={`${nunito.variable} ${atkinson.variable}`}>
+    <html
+      lang="en"
+      className={`${nunito.variable} ${atkinson.variable} bg-primary-800`}
+    >
       <body className=" bg-primary-800">
         <Providers>
           <Toaster
@@ -42,6 +45,11 @@ export default function RootLayout({ children }) {
           <main className="relative flex min-h-screen flex-col items-center justify-between   text-secondary">
             {children}
           </main>
+          <footer className="flex w-full items-center justify-center border-t border-primary-500 p-4">
+            <p className="text-center text-secondary">
+              Jonathan Coronel &copy; {new Date().getFullYear()}
+            </p>
+          </footer>
         </Providers>
       </body>
       {/* <Script
