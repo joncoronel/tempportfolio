@@ -45,9 +45,9 @@ export default function RootLayout({ children }) {
           <main className="relative flex min-h-screen flex-col items-center justify-between   text-secondary">
             {children}
           </main>
-          <footer className="flex w-full items-center justify-center border-t border-primary-500 p-4">
+          <footer className="flex w-full items-center justify-center border-t border-primary-500 p-8">
             <p className="text-center text-secondary">
-              Jonathan Coronel &copy; {new Date().getFullYear()}
+              Built by Jonathan Coronel &copy; {new Date().getFullYear()}
             </p>
           </footer>
         </Providers>
