@@ -5,8 +5,8 @@ export default function Hero() {
     <div
       className="flex flex-col items-center justify-center"
       style={{
-        height: "calc(100vh - 6rem)",
-        height: "calc(100svh - 6rem)",
+        height: "calc(100vh - 5rem)",
+        height: "calc(100svh - 5rem)",
       }}
     >
       <div className="flex flex-col items-center justify-center">
@@ -19,8 +19,12 @@ export default function Hero() {
         </p>
       </div>
       <div className="mt-8 flex flex-row items-center justify-center space-x-4">
-        <PulseButton variant={"primary"}>Contact</PulseButton>
-        <PulseButton variant={"secondary"}>Projects</PulseButton>
+        <PulseButton size={"md"} variant={"primary"}>
+          Contact
+        </PulseButton>
+        <PulseButton size={"md"} variant={"secondary"}>
+          Projects
+        </PulseButton>
       </div>
     </div>
   );
