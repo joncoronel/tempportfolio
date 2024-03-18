@@ -1,8 +1,10 @@
 .sticky {
   /* overflow-x: clip; */
-  animation: linear slideIn forwards;
+  animation: ease-in slideIn forwards;
   animation-timeline: view();
   animation-range: exit 50% 100%;
+  will-change: transform, opacity;
+  transform: translateZ(0) translateY(0) scale(1, 1);
 }
 
 @keyframes scaleIn {
@@ -22,7 +24,7 @@
   }
   to {
     opacity: 0;
-    transform: translateZ(0) translateY(250px) scale(1, 1);
+    transform: translateZ(0) translateY(200px) scale(1, 1);
   }
 }
 

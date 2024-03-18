@@ -46,7 +46,7 @@ export default function Sticky({ title, index, children }) {
 
   useEffect(() => {
     async function loadMotion() {
-      if (isScrollAnimationNotSupported()) {
+      if (true) {
         const { motion, useScroll, useTransform, easeOut } = await import(
           "framer-motion"
         );
