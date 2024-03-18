@@ -167,5 +167,14 @@ module.exports = {
         { values: theme("textShadow") },
       );
     }),
+    function ({ addUtilities }) {
+      const newUtilities = {
+        ".stabilize-animation": {
+          transform: "translate3d(0, 0, 0) scale(1, 1)",
+          willChange: "transform",
+        },
+      };
+      addUtilities(newUtilities);
+    },
   ],
 };
