@@ -32,6 +32,10 @@ module.exports = {
       gridTemplateColumns: {
         auto: "repeat(auto-fill, minmax(16rem, 1fr))",
       },
+      fontFamily: {
+        nunito: "var(--font-nunito), sans-serif",
+        atkinson: "var(--font-atkinson), sans-serif",
+      },
       colors: {
         // primary: "#bdd7e9",
         // "primary-content": "#2a5b7d",

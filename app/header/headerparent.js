@@ -8,7 +8,6 @@ export default function HeaderParent() {
       <header className=" absolute top-0 z-10 mx-auto w-full">
         <div className="mx-auto flex w-full max-w-7xl flex-row items-center justify-between p-4">
           <Logo />
-
           <Socials />
         </div>
       </header>
