@@ -119,6 +119,10 @@ export default function Contact() {
                 value: 1000,
                 message: "Max character length is 1000",
               },
+              minLength: {
+                value: 1,
+                message: "Message is required",
+              },
             }}
             register={register}
           />

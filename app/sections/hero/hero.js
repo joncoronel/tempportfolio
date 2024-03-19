@@ -5,8 +5,8 @@ export default function Hero() {
     <div
       className="flex flex-col items-center justify-center"
       style={{
-        height: "calc(100vh - 5rem)",
-        height: "calc(100svh - 5rem)",
+        height: "calc(100vh)",
+        height: "calc(100svh)",
       }}
     >
       <div className="flex flex-col items-center justify-center">

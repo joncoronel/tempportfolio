@@ -18,7 +18,7 @@ function MotionSticky({ title, index, children, motion }) {
     ease: easeOut,
   });
 
-  const scale = useTransform(scrollYProgress, [1, 0], [1, 0.95], {
+  const scale = useTransform(scrollYProgress, [1, 0], [1, 0.97], {
     ease: easeOut,
   });
 
