@@ -18,6 +18,10 @@ function MotionSticky({ title, index, children, motion }) {
     ease: easeOut,
   });
 
+  const scale = useTransform(scrollYProgress, [1, 0], [1, 0.95], {
+    ease: easeOut,
+  });
+
   return (
     <motion.div
       ref={ref}
@@ -27,7 +31,7 @@ function MotionSticky({ title, index, children, motion }) {
         originY: 1,
         y: y,
         x: 0,
-        scale: 1,
+        scale: scale,
       }}
       id={title}
     >
