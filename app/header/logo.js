@@ -3,7 +3,10 @@ import logo from "@/public/images/portfolio.svg";
 
 export default function Logo() {
   return (
-    <div className="relative flex flex-1 items-center justify-start">
+    <div
+      id={"Logo"}
+      className="relative flex flex-1 items-center justify-center sm:justify-start"
+    >
       <Image
         src={logo}
         alt="Portfolio Logo"
