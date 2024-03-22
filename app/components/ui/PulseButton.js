@@ -50,7 +50,7 @@ export default forwardRef(function PulseButton(
       })}
       href={href}
       {...rest}
-      className={`relative flex min-h-[1.8rem] ${onlyIcon && "aspect-square px-0 py-0"}  w-fit items-center justify-center gap-1  rounded-lg px-2 py-1  ${size === "md" && "text-md"} ${size === "sm" && "text-sm"} ${size === "lg" && "text-lg"} text-secondary-500 ring-secondary-500 ring-offset-2 transition  [transition:transform_.0s,box-shadow_.15s] focus-visible:ring-2 active:scale-[0.97]   ${styles.pulsebutton} ${variant === "secondary" && styles.secondary} `}
+      className={`relative flex min-h-[1.8rem] ${onlyIcon ? "aspect-square px-0 py-0" : "px-2 py-1"}  w-fit items-center justify-center gap-1  rounded-lg   ${size === "md" && "text-md"} ${size === "sm" && "text-sm"} ${size === "lg" && "text-lg"} text-secondary-500 ring-secondary-500 ring-offset-2 transition  [transition:transform_.0s,box-shadow_.15s] focus-visible:ring-2 active:scale-[0.97]   ${styles.pulsebutton} ${variant === "secondary" && styles.secondary} `}
     >
       <div className="absolute inset-0 rounded-lg">
         {pulses.map((pulse) => (

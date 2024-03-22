@@ -177,6 +177,11 @@ module.exports = {
           transform: "translate3d(0, 0, 0) scale(1, 1)",
           willChange: "transform",
         },
+        ".transition-hidenav": {
+          transitionProperty: "transform",
+          transitionTimingFunction: "cubic-bezier(0.4, 0, 0.2, 1)",
+          transitionDuration: "0.15s",
+        },
       };
       addUtilities(newUtilities);
     },
