@@ -1,5 +1,6 @@
 import Image from "next/image";
-import logo from "@/public/images/portfolio.svg";
+
+import logolight from "@/public/images/logolight.svg";
 
 export default function Logo() {
   return (
@@ -8,7 +9,7 @@ export default function Logo() {
       className="relative flex flex-1 items-center justify-center sm:justify-start"
     >
       <Image
-        src={logo}
+        src={logolight}
         alt="Portfolio Logo"
         className="h-8 w-auto drop-shadow-logo-glow "
         priority
