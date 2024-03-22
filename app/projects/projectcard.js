@@ -8,9 +8,20 @@ export default function ProjectCard({ title, description, image }) {
         <div className="flex w-full flex-row justify-between">
           <h2 className="text-2xl font-bold text-secondary-500">{title}</h2>{" "}
           <div className="flex flex-row items-center justify-end gap-4">
-            <PulseButton icon={<Radio size={"1.1rem"} />}>Live</PulseButton>
-            <PulseButton icon={<Github size={"1.1rem"} />}></PulseButton>
-            <PulseButton icon={<Info size={"1.1rem"} />}></PulseButton>
+            <PulseButton
+              aria-label={"Live version of website"}
+              icon={<Radio size={"1.1rem"} />}
+            >
+              Live
+            </PulseButton>
+            <PulseButton
+              aria-label={"Github profile"}
+              icon={<Github size={"1.1rem"} />}
+            ></PulseButton>
+            <PulseButton
+              aria-label={"Additional project info"}
+              icon={<Info size={"1.1rem"} />}
+            ></PulseButton>
           </div>
         </div>
 

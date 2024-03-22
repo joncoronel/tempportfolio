@@ -19,10 +19,14 @@ export default function Hero() {
         </p>
       </div>
       <div className="mt-8 flex flex-row items-center justify-center space-x-4">
-        <PulseButton size={"md"} variant={"primary"}>
+        <PulseButton size={"md"} variant={"primary"} aria-label={"Contact Me"}>
           Contact
         </PulseButton>
-        <PulseButton size={"md"} variant={"secondary"}>
+        <PulseButton
+          size={"md"}
+          variant={"secondary"}
+          aria-label={"View Projects"}
+        >
           Projects
         </PulseButton>
       </div>

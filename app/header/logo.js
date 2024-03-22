@@ -1,6 +1,5 @@
 import Image from "next/image";
 import Link from "next/link";
-
 import logolight from "@/public/images/logolight.svg";
 import PulseButton from "../components/ui/PulseButton";
 
@@ -20,7 +19,9 @@ export default function Logo() {
       </Link>
 
       <span className="sm:hidden">
-        <PulseButton variant="secondary">Message Me</PulseButton>
+        <PulseButton variant="secondary" aria-label={"Message Me"}>
+          Message Me
+        </PulseButton>
       </span>
     </div>
   );

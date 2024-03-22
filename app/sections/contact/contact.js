@@ -150,6 +150,7 @@ export default function Contact() {
                 https://www.linkedin.com/in/abhishek-kumar-1a6b2a1b6/"
               target="_blank"
               rel="noopener noreferrer"
+              aria-label={"Linkedin Profile"}
             ></PulseButton>
 
             <PulseButton
@@ -158,6 +159,7 @@ export default function Contact() {
               href="mailto: joncorone@gmail.com"
               target="_blank"
               rel="noopener noreferrer"
+              aria-label={"Email Me"}
             ></PulseButton>
 
             <PulseButton
@@ -166,6 +168,7 @@ export default function Contact() {
               href="https://www.github.com/joncoronel"
               target="_blank"
               rel="noopener noreferrer"
+              aria-label={"Github Profile"}
             ></PulseButton>
             <PulseButton
               variant={"secondary"}
@@ -173,6 +176,7 @@ export default function Contact() {
               href="https://www.twitter.com"
               target="_blank"
               rel="noopener noreferrer"
+              aria-label={"Twitter Profile"}
             ></PulseButton>
           </div>
         </div>
