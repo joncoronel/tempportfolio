@@ -82,7 +82,7 @@ export default function CharmingTabs({ items, selectedIndex }) {
 
               {/* Hover background */}
               <div
-                className="absolute inset-0 hidden md:block opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+                className="absolute inset-0 hidden opacity-0 transition-opacity duration-500 group-hover:opacity-100 md:block"
                 style={{
                   transform: `translateX(calc(${
                     mousePosition.x ? (mousePosition.x - 0.5) * 100 : 0
@@ -114,61 +114,7 @@ export default function CharmingTabs({ items, selectedIndex }) {
                 }}
               ></div>
             </div>
-
-            {/* Mobile button (< md) */}
-            <div className="hidden">
-              <>
-                <Menu.Button
-                  ref={refs.setReference}
-                  className="group peer relative flex rounded-full bg-white/90 p-2 outline-none transition-colors active:bg-white/80 md:hidden"
-                >
-                  <MenuIcon isOpen={open} />
-                </Menu.Button>
-
-                {/* Focus/hover background */}
-                <div className="absolute inset-0 -z-[1] block bg-[#af91ff] opacity-20 transition-opacity duration-100 group-hover:opacity-70 peer-focus:opacity-100 md:hidden"></div>
-              </>
-            </div>
           </div>
-
-          {/* Mobile items (< md) */}
-          {open && (
-            <FloatingPortal>
-              <Menu.Items
-                className="group focus:outline-none md:hidden"
-                ref={refs.setFloating}
-                style={floatingStyles}
-              >
-                <Transition
-                  as={Fragment}
-                  appear={true}
-                  enter="transition duration-100 ease-out"
-                  enterFrom="transform scale-95 opacity-0"
-                  enterTo="transform scale-100 opacity-100"
-                  leave="transition duration-75 ease-out"
-                  leaveFrom="transform scale-100 opacity-100"
-                  leaveTo="transform scale-95 opacity-0"
-                >
-                  <div className="mt-3 origin-top-right rounded-[0.75rem] bg-[#60a5fa88] p-[2px]">
-                    <div className="rounded-[calc(0.75rem-2px)] bg-white/[0.95] py-1 pr-4 shadow-md">
-                      {items.map((item, idx) => (
-                        <MobileTab
-                          key={idx}
-                          as={TabComponent}
-                          isActive={idx === selectedIndex}
-                          onClick={() => {
-                            close();
-                            onChange(idx);
-                          }}
-                          {...item}
-                        />
-                      ))}
-                    </div>
-                  </div>
-                </Transition>
-              </Menu.Items>
-            </FloatingPortal>
-          )}
         </>
       )}
     </Menu>
@@ -191,7 +137,7 @@ function DesktopTab({ label, isActive, setActiveElement, ...rest }) {
         "group flex cursor-pointer items-center gap-1.5 whitespace-nowrap rounded-full px-4 py-2.5 text-sm font-medium outline-none transition-colors duration-200 lg:px-6",
         isActive
           ? "text-secondary-400 focus:text-secondary-300"
-          : "text-secondary-600 hover:text-secondary-500 focus:text-secondary-500"
+          : "text-secondary-600 hover:text-secondary-500 focus:text-secondary-500",
       )}
       {...rest}
     >
@@ -200,70 +146,10 @@ function DesktopTab({ label, isActive, setActiveElement, ...rest }) {
           "block h-1 w-1 rounded-full transition-transform duration-200",
           isActive
             ? "scale-100 bg-secondary-500 group-focus:bg-secondary-400"
-            : "scale-0 bg-gray-600 group-focus:scale-100"
+            : "scale-0 bg-gray-600 group-focus:scale-100",
         )}
       ></div>
       {label}
     </Link>
-  );
-}
-
-function MobileTab({ as, label, isActive, ...rest }) {
-  return (
-    <Menu.Item
-      as={as}
-      className={classNames(
-        "group/item flex cursor-pointer items-center gap-1.5 whitespace-nowrap rounded-full px-4 py-2.5 text-sm font-medium outline-none transition-colors duration-200 lg:px-6",
-        isActive
-          ? "text-indigo-900 focus:text-indigo-950"
-          : "text-slate-500 hover:text-slate-700 focus:text-slate-700"
-      )}
-      {...rest}
-    >
-      {({ active }) => (
-        <>
-          <div
-            className={classNames(
-              "block h-1 w-1 rounded-full transition-transform duration-200",
-              isActive
-                ? "group/item-focus:bg-indigo-800 scale-100 bg-indigo-600"
-                : classNames(
-                    "group/item-focus:scale-100 bg-gray-600",
-                    active ? "scale-100" : "scale-0"
-                  )
-            )}
-          ></div>
-          {label}
-        </>
-      )}
-    </Menu.Item>
-  );
-}
-
-// Menu icon that animates between hamburger and X
-function MenuIcon({ isOpen = false }) {
-  return (
-    <div className="flex h-6 w-6 flex-col justify-between px-[0.2rem] py-[0.35rem]">
-      {[...Array(3)].map((_, outerIdx) => (
-        <div key={outerIdx} className="relative">
-          {[...Array(outerIdx === 1 ? 2 : 1)].map((_, innerIdx) => (
-            <div
-              key={innerIdx}
-              className={classNames(
-                "h-0.5 w-full rounded-full bg-slate-500 transition-all duration-150 group-hover:bg-slate-600",
-                innerIdx === 1 && "absolute top-0",
-                isOpen &&
-                  classNames(
-                    innerIdx === 1 && "rotate-45",
-                    outerIdx === 1 && innerIdx === 0 && "-rotate-45",
-                    outerIdx === 0 && "translate-y-full scale-75 opacity-0",
-                    outerIdx === 2 && "-translate-y-full scale-75 opacity-0"
-                  )
-              )}
-            ></div>
-          ))}
-        </div>
-      ))}
-    </div>
   );
 }

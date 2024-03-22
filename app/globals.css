@@ -8,6 +8,12 @@ input {
   /* font-weight: 400; */
 }
 
+html,
+body {
+  scroll-behavior: smooth !important;
+  scroll-padding-top: 5rem;
+}
+
 h1,
 h2,
 h3,

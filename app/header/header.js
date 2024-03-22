@@ -6,9 +6,9 @@ import throttle from "lodash.throttle";
 import debounce from "lodash.debounce";
 
 const items = [
-  { label: "About", href: "/" },
-  { label: "Projects", href: "/contact" },
-  { label: "Contact", href: "/info" },
+  { label: "About", href: "#about" },
+  { label: "Projects", href: "#projects" },
+  { label: "Contact", href: "#contact" },
 ];
 
 const handleScroll = () => {
@@ -17,7 +17,7 @@ const handleScroll = () => {
     const header = document.querySelector("header");
     const translateYValue =
       logoHeight +
-      parseFloat(getComputedStyle(document.documentElement).fontSize);
+      parseFloat(getComputedStyle(document.documentElement).fontSize) * 1.5;
 
     if (window.scrollY > logoHeight) {
       header.style.transform = `translateY(-${translateYValue}px)`;
