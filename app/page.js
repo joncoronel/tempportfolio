@@ -1,6 +1,7 @@
 import Projects from "./projects/projects";
 import Contact from "./sections/contact/contact";
 import Hero from "./sections/hero/hero";
+import About from "./sections/about/about";
 
 import Sticky from "./components/sticky";
 
@@ -12,6 +13,14 @@ export default function Home() {
         id={"home"}
       >
         <Hero />
+      </section>
+      <section
+        className="mb-[8rem] mt-16 flex w-full max-w-7xl flex-col px-4"
+        id={"about"}
+      >
+        <Sticky title="section0" index="0">
+          <About />
+        </Sticky>
       </section>
       <section
         className="mb-[8rem] mt-16 flex w-full max-w-7xl flex-col px-4"

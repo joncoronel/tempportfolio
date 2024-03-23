@@ -9,23 +9,23 @@ function MotionSticky({ title, index, children, motion }) {
 
   const { scrollYProgress } = useScroll({
     target: ref,
-    offset: ["end start", "1 .7"],
+    offset: ["end start", "1 .45"],
   });
 
-  const y = useTransform(scrollYProgress, [1, 0], [0, 200], { ease: easeOut });
+  const y = useTransform(scrollYProgress, [1, 0], [0, 150], { ease: easeOut });
 
   const opacity = useTransform(scrollYProgress, [1, 0], [1, 0], {
     ease: easeOut,
   });
 
-  const scale = useTransform(scrollYProgress, [1, 0], [1, 0.97], {
+  const scale = useTransform(scrollYProgress, [1, 0], [1, 0.99], {
     ease: easeOut,
   });
 
   return (
     <motion.div
       ref={ref}
-      className={`stabilize-animation relative`}
+      className={`relative stabilize-animation`}
       style={{
         opacity: opacity,
         originY: 1,
