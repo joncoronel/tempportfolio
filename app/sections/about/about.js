@@ -20,9 +20,9 @@ export default function About() {
       <div className="mt-16 flex flex-col gap-4">
         <p className="max-w-4xl text-left  text-lg">
           Hi, I&apos;m Jonathan Coronel, a web developer with a passion for
-          building intuitive and dynamic user experiences. When I'm not building
-          websites, you can find me building computers and keyboards among other
-          tech-related hobbies.
+          building intuitive and dynamic user experiences. When I&apos;m not
+          building websites, you can find me building computers and keyboards
+          among other tech-related hobbies.
         </p>
 
         <p className="max-w-2xl text-left  text-lg">
