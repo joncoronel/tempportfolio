@@ -1,5 +1,5 @@
-import PulseButton from "../components/ui/PulseButton";
-import { Radio, Github, Info } from "lucide-react";
+import PulseButton from "../../components/ui/PulseButton";
+import { Radio, Github, Info, CircleChevronRight } from "lucide-react";
 
 export default function ProjectCard({ title, description, image }) {
   return (
@@ -18,14 +18,18 @@ export default function ProjectCard({ title, description, image }) {
               aria-label={"Github profile"}
               icon={<Github size={"1.1rem"} />}
             ></PulseButton>
-            <PulseButton
-              aria-label={"Additional project info"}
-              icon={<Info size={"1.1rem"} />}
-            ></PulseButton>
           </div>
         </div>
 
-        <p className="text-secondary-200">{description}</p>
+        <p className="text-secondary-200">
+          {description}
+          <button
+            aria-label={"Additional project info"}
+            className="ml-auto flex items-center justify-center gap-2 text-secondary-600 hover:text-secondary-500"
+          >
+            Learn More <CircleChevronRight size={"1.1rem"} />
+          </button>
+        </p>
       </div>
       <div className="flex aspect-[5/3] h-full w-full items-center justify-center rounded-[calc(1.5rem-.5rem)] bg-primary-600">
         image here
