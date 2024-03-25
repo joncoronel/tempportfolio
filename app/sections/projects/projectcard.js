@@ -1,5 +1,6 @@
 import PulseButton from "../../components/ui/PulseButton";
 import { Radio, Github, Info, CircleChevronRight } from "lucide-react";
+import Link from "next/link";
 
 export default function ProjectCard({ title, description, image }) {
   return (
@@ -23,12 +24,13 @@ export default function ProjectCard({ title, description, image }) {
 
         <p className="text-secondary-200">
           {description}
-          <button
+          <Link
+            href={`/projects/${title.toLowerCase()}`}
             aria-label={"Additional project info"}
-            className="ml-auto flex items-center justify-center gap-2 text-secondary-600 hover:text-secondary-500"
+            className="ml-auto flex max-w-fit items-center justify-center gap-2 text-secondary-600 hover:text-secondary-500"
           >
             Learn More <CircleChevronRight size={"1.1rem"} />
-          </button>
+          </Link>
         </p>
       </div>
       <div className="flex aspect-[5/3] h-full w-full items-center justify-center rounded-[calc(1.5rem-.5rem)] bg-primary-600">

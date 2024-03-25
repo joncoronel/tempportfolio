@@ -6,9 +6,9 @@ import throttle from "lodash.throttle";
 import debounce from "lodash.debounce";
 
 const items = [
-  { label: "About", href: "#about" },
-  { label: "Projects", href: "#projects" },
-  { label: "Contact", href: "#contact" },
+  { label: "About", href: "/#about" },
+  { label: "Projects", href: "/#projects" },
+  { label: "Contact", href: "/#contact" },
 ];
 
 const handleScroll = () => {

@@ -170,14 +170,14 @@ export default function Contact() {
               rel="noopener noreferrer"
               aria-label={"Github Profile"}
             ></PulseButton>
-            <PulseButton
+            {/* <PulseButton
               variant={"secondary"}
               icon={<Twitter size={"1.1rem"} />}
               href="https://www.twitter.com"
               target="_blank"
               rel="noopener noreferrer"
               aria-label={"Twitter Profile"}
-            ></PulseButton>
+            ></PulseButton> */}
           </div>
         </div>
       </div>
