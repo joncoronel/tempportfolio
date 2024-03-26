@@ -12,6 +12,7 @@ export default function ProjectCard({ title, description, image }) {
             <PulseButton
               aria-label={"Live version of website"}
               icon={<Radio size={"1.1rem"} />}
+              variant={"secondary"}
             >
               Live
             </PulseButton>
