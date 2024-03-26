@@ -12,12 +12,12 @@
 }
 
 .secondary {
-  background-color: hsl(var(--nextui-secondary-600));
+  background-color: hsl(var(--nextui-secondary-800));
   box-shadow:
     0 0 0 2px hsl(var(--nextui-secondary-600)),
-    inset 0 0 5px 2px hsl(var(--nextui-secondary-800) / 0.8),
+    inset 0 0 5px 2px hsl(var(--nextui-secondary-700) / 0.8),
     0 0 4px 2px hsl(var(--nextui-secondary-600) / 0.33);
-  color: hsl(var(--nextui-primary-800));
+  color: hsl(var(--nextui-primary-100));
 }
 
 .pulsebutton:hover {
