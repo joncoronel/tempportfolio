@@ -38,6 +38,7 @@ export default function ProjectCard({ title, description, image }) {
         <Image
           src={Overman}
           alt={title}
+          sizes="100vw"
           className="flex w-full max-w-[20rem] translate-y-6 rounded-t-lg transition-transform md:max-w-[23rem] md:translate-y-10  md:hover:translate-y-6"
         />
       </div>
