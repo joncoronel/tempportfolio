@@ -27,6 +27,7 @@ export default function OvermanProject() {
           src={Overman}
           alt="Overman"
           priority
+          sizes={"100vw"}
           placeholder="blur"
           className="overflow-clip rounded-md shadow-card"
         />
