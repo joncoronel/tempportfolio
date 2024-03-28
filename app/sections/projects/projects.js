@@ -27,7 +27,7 @@ export default function Projects() {
       <h2 className="flex justify-center text-4xl font-extrabold  shadow-secondary-300/60 text-shadow-heading">
         Projects
       </h2>
-      <div className="mt-16 flex flex-wrap justify-center gap-8">
+      <div className="mt-16 flex flex-col items-center justify-center gap-12">
         {projects.map((project) => (
           <ProjectCard
             key={project.title}

@@ -1,6 +1,6 @@
 .pulsebutton {
   outline: none;
-  background-color: hsl(var(--nextui-primary-800));
+  background-color: hsl(var(--nextui-secondary-900) / 0);
   position: relative;
   z-index: 0;
   box-shadow:
