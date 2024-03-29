@@ -27,7 +27,7 @@ export default function RootLayout({ children }) {
   return (
     <html
       lang="en"
-      className={`${nunito.variable} ${atkinson.variable} bg-primary-800`}
+      className={`relative ${nunito.variable} ${atkinson.variable} bg-primary-800`}
     >
       <body className=" bg-primary-800">
         <Providers>

@@ -176,6 +176,12 @@ module.exports = {
         ".stabilize-animation": {
           transform: "translate3d(0, 0, 0) scale(1, 1)",
           willChange: "transform",
+          backfaceVisibility: "hidden",
+          // safari fix
+          WebkitBackfaceVisibility: "hidden",
+        },
+        ".scale-card": {
+          transform: "scale(1.02) translateZ(0)",
         },
         ".transition-hidenav": {
           transitionProperty: "transform",

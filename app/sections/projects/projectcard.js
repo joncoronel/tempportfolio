@@ -6,7 +6,7 @@ import Overman from "../../../public/images/projects/overman.webp";
 
 export default function ProjectCard({ title, description, image }) {
   return (
-    <div className="flex  w-full max-w-4xl flex-col-reverse overflow-clip  rounded-xl border-1 border-primary-500 bg-primary-700  shadow-card md:flex-row ">
+    <div className="md:hover:scale-card  flex w-full max-w-4xl flex-col-reverse  overflow-clip rounded-xl border-1 border-primary-500  bg-primary-700 shadow-card md:flex-row md:transition-transform ">
       <div className="flex flex-1 flex-col items-center justify-between gap-1 p-4 sm:p-6">
         <div className="flex flex-row items-center  gap-4 self-end">
           <PulseButton
