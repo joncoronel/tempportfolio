@@ -1,12 +1,13 @@
 import PulseButton from "../../components/ui/PulseButton";
-import { Radio, Github, Info, CircleChevronRight } from "lucide-react";
+import { Radio, Github, CircleChevronRight } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 import Overman from "../../../public/images/projects/overman.webp";
+import OvermanLogo from "../../../public/images/logos/overmanlogo.svg";
 
 export default function ProjectCard({ title, description, image }) {
   return (
-    <div className="md:hover:scale-card  flex w-full max-w-4xl flex-col-reverse  overflow-clip rounded-xl border-1 border-primary-500  bg-primary-700 shadow-card md:flex-row md:transition-transform ">
+    <div className="flex  w-full max-w-4xl flex-col-reverse overflow-clip  rounded-xl border-1 border-primary-500 bg-primary-700  shadow-card md:flex-row md:transition-transform md:hover:scale-card ">
       <div className="flex flex-1 flex-col items-center justify-between gap-1 p-4 sm:p-6">
         <div className="flex flex-row items-center  gap-4 self-end">
           <PulseButton
@@ -21,9 +22,19 @@ export default function ProjectCard({ title, description, image }) {
             icon={<Github size={"1.1rem"} />}
           ></PulseButton>
         </div>
-        <div className="flex w-full  flex-col gap-2">
-          <h2 className="text-xl font-bold text-secondary-500">{title}</h2>{" "}
-          <p className="text-sm text-secondary-200">{description}</p>
+        <div className="flex w-full flex-row gap-4 sm:flex-col">
+          <div className="flex aspect-square h-fit w-fit items-center justify-center rounded-lg bg-orange-500/20 p-1 shadow-lg">
+            <Image
+              src={OvermanLogo}
+              alt={title}
+              className=" flex aspect-square h-8 w-8 !max-w-max"
+              unoptimized
+            />
+          </div>
+          <div className="flex w-full  flex-col gap-2">
+            <h2 className="text-xl font-bold text-secondary-500">{title}</h2>{" "}
+            <p className="text-sm text-secondary-200">{description}</p>
+          </div>
         </div>
 
         <Link
