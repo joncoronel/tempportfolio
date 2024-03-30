@@ -22,14 +22,6 @@ export default function CharmingTabs({ items, selectedIndex }) {
   const ref = useRef(null);
 
   useEffect(() => {
-    // if selectedindex is not in items, set the activeElement to undefined
-    if (!items.some((item) => item.label === selectedIndex)) {
-      setActiveElement(undefined);
-    }
-  }, [items, selectedIndex]);
-
-  // Track relative mouse position
-  useEffect(() => {
     const handler = (e) => {
       if (!ref.current) return;
 
@@ -128,6 +120,8 @@ function DesktopTab({ label, isActive, setActiveElement, ...rest }) {
   useEffect(() => {
     if (isActive && ref.current) {
       setActiveElement(ref.current);
+    } else {
+      setActiveElement((prev) => (prev === ref.current ? null : prev));
     }
   }, [isActive, setActiveElement]);
 

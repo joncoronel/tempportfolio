@@ -42,50 +42,49 @@ export default function Header() {
   const pathname = usePathname();
 
   useEffect(() => {
-    const sections = document.querySelectorAll("section");
+    if (pathname === "/") {
+      const sections = document.querySelectorAll("section");
+      let visibleSections = {};
 
-    // return if the labels in items are not found in the section ids
-    if (sections.length < items.length) {
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            // Update visibility for each section
+            visibleSections[entry.target.id] = entry.intersectionRatio;
+          });
+
+          let mostVisibleSectionId = null;
+          let maxVisibility = 0;
+
+          // Determine the most visible section
+          for (const [sectionId, visibility] of Object.entries(
+            visibleSections,
+          )) {
+            if (visibility > maxVisibility) {
+              maxVisibility = visibility;
+              mostVisibleSectionId = sectionId;
+            }
+          }
+
+          if (mostVisibleSectionId) {
+            if (activeTab !== mostVisibleSectionId) {
+              setActiveTab(mostVisibleSectionId);
+            }
+          }
+        },
+        {
+          threshold: [0, 0.1, 0.25, 0.5, 0.75, 1], // Using a range of thresholds
+        },
+      );
+
+      sections.forEach((section) => observer.observe(section));
+
+      return () => {
+        sections.forEach((section) => observer.unobserve(section));
+      };
+    } else {
       setActiveTab(null);
-      return;
     }
-
-    let visibleSections = {};
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          // Update visibility for each section
-          visibleSections[entry.target.id] = entry.intersectionRatio;
-        });
-
-        let mostVisibleSectionId = null;
-        let maxVisibility = 0;
-
-        // Determine the most visible section
-        for (const [sectionId, visibility] of Object.entries(visibleSections)) {
-          if (visibility > maxVisibility) {
-            maxVisibility = visibility;
-            mostVisibleSectionId = sectionId;
-          }
-        }
-
-        if (mostVisibleSectionId) {
-          if (activeTab !== mostVisibleSectionId) {
-            setActiveTab(mostVisibleSectionId);
-          }
-        }
-      },
-      {
-        threshold: [0, 0.1, 0.25, 0.5, 0.75, 1], // Using a range of thresholds
-      },
-    );
-
-    sections.forEach((section) => observer.observe(section));
-
-    return () => {
-      sections.forEach((section) => observer.unobserve(section));
-    };
   }, [pathname]);
 
   useEffect(() => {
