@@ -1,6 +1,6 @@
-import { Fragment, useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { Menu, Transition } from "@headlessui/react";
-import { useFloating, shift, FloatingPortal } from "@floating-ui/react";
+
 import Link from "next/link";
 
 function classNames(...classes) {
@@ -21,11 +21,12 @@ export default function CharmingTabs({ items, selectedIndex }) {
   const [activeElement, setActiveElement] = useState(undefined);
   const ref = useRef(null);
 
-  // Mobile menu panel positioning
-  const { refs, floatingStyles } = useFloating({
-    placement: "bottom",
-    middleware: [shift({ padding: 8 })],
-  });
+  useEffect(() => {
+    // if selectedindex is not in items, set the activeElement to undefined
+    if (!items.some((item) => item.label === selectedIndex)) {
+      setActiveElement(undefined);
+    }
+  }, [items, selectedIndex]);
 
   // Track relative mouse position
   useEffect(() => {
@@ -134,7 +135,7 @@ function DesktopTab({ label, isActive, setActiveElement, ...rest }) {
     <Link
       ref={ref}
       className={classNames(
-        "group flex cursor-pointer items-center gap-1.5 whitespace-nowrap rounded-full px-4 py-2.5 text-sm font-medium outline-none transition-colors duration-200 lg:px-6",
+        "group flex cursor-pointer items-center gap-1.5 whitespace-nowrap rounded-full px-4 py-2.5 text-sm font-medium capitalize outline-none transition-colors duration-200 lg:px-6",
         isActive
           ? "text-secondary-400 focus:text-secondary-300"
           : "text-secondary-600 hover:text-secondary-500 focus:text-secondary-500",
