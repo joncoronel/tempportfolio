@@ -34,6 +34,26 @@ body {
   min-height: 100dvh;
 }
 
+.animation-sticky {
+  /* only for mobile */
+  @media (min-width: 768px) {
+    animation: linear slideOut forwards;
+    animation-timeline: view();
+    animation-range: exit 60% 100%;
+  }
+}
+
+@keyframes slideOut {
+  from {
+    opacity: 1;
+    transform: translateZ(0) translateY(0) scale(1, 1);
+  }
+  to {
+    opacity: 0;
+    transform: translateZ(0) translateY(20%) scale(1, 1);
+  }
+}
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;
