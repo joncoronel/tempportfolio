@@ -36,10 +36,14 @@ body {
 
 .animation-sticky {
   /* only for mobile */
-  @media (min-width: 768px) {
-    animation: linear slideOut forwards;
-    animation-timeline: view();
-    animation-range: exit 60% 100%;
+  /* supports scroll animations */
+
+  @supports (animation-timeline: view()) {
+    @media (min-width: 768px) {
+      animation: linear slideOut forwards;
+      animation-timeline: view();
+      animation-range: exit 60% 100%;
+    }
   }
 }
 
@@ -50,7 +54,7 @@ body {
   }
   to {
     opacity: 0;
-    transform: translateZ(0) translateY(20%) scale(1, 1);
+    transform: translateZ(0) translateY(15%) scale(1, 1);
   }
 }
 
