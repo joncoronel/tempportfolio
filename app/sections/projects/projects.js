@@ -1,5 +1,7 @@
 import ProjectCard from "./projectcard";
 
+import Sticky from "@/app/components/sticky";
+
 const projects = [
   {
     title: "Overman",
@@ -29,12 +31,14 @@ export default function Projects() {
       </h2>
       <div className="mt-16 flex flex-col items-center justify-center gap-12">
         {projects.map((project) => (
-          <ProjectCard
-            key={project.title}
-            title={project.title}
-            description={project.description}
-            image={project.image}
-          />
+          <Sticky key={project.title}>
+            <ProjectCard
+              key={project.title}
+              title={project.title}
+              description={project.description}
+              image={project.image}
+            />
+          </Sticky>
         ))}
       </div>
     </>
