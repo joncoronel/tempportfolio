@@ -3,7 +3,7 @@ import "./globals.css";
 import { Providers } from "./providers";
 import HeaderParent from "./header/headerparent";
 import { Toaster } from "sonner";
-// import Script from "next/script";
+import Script from "next/script";
 
 const nunito = Nunito({
   subsets: ["latin"],
@@ -52,6 +52,13 @@ export default function RootLayout({ children }) {
           </footer>
         </Providers>
       </body>
+      <Script
+        async
+        src="https://us.umami.is/script.js"
+        data-website-id="44f93001-e590-4d81-b637-50e14a269151"
+        strategy="afterInteractive"
+      />
+
       {/* <Script
         src="https://beamanalytics.b-cdn.net/beam.min.js"
         data-token="a33dc8c2-33ae-44b0-9e87-e3523e69b4c5"
