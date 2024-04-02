@@ -15,14 +15,14 @@ const LogoSize = "2rem";
 
 export default function OvermanProject() {
   return (
-    <section className=" mx-auto mb-[8rem] mt-44 flex w-full max-w-7xl flex-col items-center gap-20 px-4">
+    <section className=" mx-auto mb-[8rem] mt-40 flex w-full max-w-7xl flex-col items-center gap-20 px-4">
       <h2 className="flex justify-center text-4xl font-extrabold  shadow-secondary-300/60 text-shadow-heading">
         Overman
         <span className="text-primary-500">.</span>
         <span className="text-primary-300">Nexus</span>
       </h2>
 
-      <div className="flex max-w-2xl flex-col gap-6">
+      <div className="flex max-w-4xl flex-col gap-6">
         <Image
           src={Overman}
           alt="Overman"
