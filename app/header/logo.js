@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import logolight from "@/public/images/logolight.svg";
+import logolight from "@/public/images/logo.svg";
 
 export default function Logo() {
   return (
