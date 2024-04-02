@@ -29,7 +29,7 @@ export default function RootLayout({ children }) {
       lang="en"
       className={`relative ${nunito.variable} ${atkinson.variable} bg-primary-800`}
     >
-      <body className=" bg-primary-800">
+      <body className="bg-primary-800">
         <Providers>
           <Toaster
             position="bottom-right"

@@ -13,7 +13,7 @@ export default function InputWrapper({
 
   // Common props for both input and textarea
   const commonProps = {
-    className: `flex w-full rounded-md bg-primary-500 p-2 ${styles.input} resize-none`,
+    className: `flex w-full rounded-md  p-2 ${styles.input} resize-none`,
     placeholder,
     rows: "5",
     "aria-invalid": errors[name] ? "true" : "false",
