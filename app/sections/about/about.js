@@ -17,7 +17,7 @@ export default function About() {
       <h1 className=" text-4xl font-extrabold  shadow-secondary-300/60 text-shadow-heading">
         About Me
       </h1>
-      <div className="mt-16 flex flex-col gap-4">
+      <div className="mt-16 flex flex-col gap-4 text-primary-200">
         <p className="max-w-4xl text-left  text-lg">
           Hi, I&apos;m Jonathan Coronel, a web developer with a passion for
           building intuitive and dynamic user experiences. When I&apos;m not

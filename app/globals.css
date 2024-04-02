@@ -8,6 +8,11 @@ input {
   /* font-weight: 400; */
 }
 
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
 html,
 body {
   scroll-behavior: smooth;
@@ -30,7 +35,7 @@ span {
 }
 body {
   color: rgb(var(--foreground-rgb));
-  -webkit-font-smoothing: antialiased;
+
   min-height: 100dvh;
 }
 
