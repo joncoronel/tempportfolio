@@ -19,7 +19,7 @@ const handleScroll = () => {
     const header = document.querySelector("header");
     const translateYValue =
       logoHeight +
-      parseFloat(getComputedStyle(document.documentElement).fontSize) * 1.5;
+      parseFloat(getComputedStyle(document.documentElement).fontSize);
 
     if (window.scrollY > logoHeight) {
       header.style.transform = `translateY(-${translateYValue}px)`;
