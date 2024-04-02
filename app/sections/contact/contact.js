@@ -71,8 +71,10 @@ export default function Contact() {
 
   return (
     <>
-      <h2 className="flex justify-center text-4xl font-extrabold  shadow-secondary-300/60 text-shadow-heading">
+      <h2 className="flex items-center  gap-2 whitespace-nowrap text-3xl font-extrabold shadow-secondary-300/60 text-shadow-heading">
         Get In Touch
+        {/* line to the rest of the width on the line */}
+        <div className=" h-[1px] w-full bg-primary-500"></div>
       </h2>
       <div className="relative mt-16 flex flex-col items-center justify-center gap-8 lg:flex-row lg:items-start lg:justify-center lg:gap-16">
         <form
