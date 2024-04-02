@@ -31,7 +31,8 @@ export default function Sticky({ children }) {
       initial={{ opacity: 0, scale: 0.95 }}
       whileInView={{ opacity: 1, scale: 1 }}
       viewport={{
-        margin: "-50px",
+        margin: "-100px",
+        once: true,
       }}
       className="relative flex w-full justify-center"
     >
