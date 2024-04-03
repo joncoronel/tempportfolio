@@ -12,11 +12,11 @@ export default function Logo() {
       <Image
         src={logolight}
         alt="Portfolio Logo"
-        className="h-5 w-auto cursor-pointer drop-shadow-logo-glow sm:h-7 "
+        className="h-5 w-auto cursor-pointer drop-shadow-logo-glow sm:h-5 "
         priority
       />
 
-      <p className="font-nunito text-lg  font-bold text-secondary sm:hidden">
+      <p className="font-nunito text-lg  font-bold text-secondary ">
         Jon Coronel
       </p>
     </Link>

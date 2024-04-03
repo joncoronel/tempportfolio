@@ -1,7 +1,7 @@
 import { Nunito, Atkinson_Hyperlegible } from "next/font/google";
 import "./globals.css";
 import { Providers } from "./providers";
-import HeaderParent from "./header/headerparent";
+import NavParent from "./nav/navparent";
 import { Toaster } from "sonner";
 // import Script from "next/script";
 
@@ -40,7 +40,7 @@ export default function RootLayout({ children }) {
               },
             }}
           />
-          <HeaderParent />
+          <NavParent />
 
           <main className="relative flex min-h-screen flex-col items-center justify-between   text-secondary">
             {children}

@@ -1,5 +1,4 @@
 import PulseButton from "../components/ui/PulseButton";
-import { Linkedin } from "lucide-react";
 
 export default function Socials() {
   return (
@@ -7,11 +6,6 @@ export default function Socials() {
       <PulseButton aria-label={"Resume File"} variant={"secondary"}>
         Resume
       </PulseButton>
-      <PulseButton
-        variant={"secondary"}
-        icon={<Linkedin size={"1rem"} />}
-        aria-label={"Linkedin Profile"}
-      ></PulseButton>
     </div>
   );
 }

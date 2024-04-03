@@ -7,7 +7,7 @@ export default function Hero() {
         <h1 className=" text-4xl font-bold text-primary-400">
           Jonathan Coronel.{" "}
           <span className="text-secondary-500">
-            A designer and developer building digital products
+            A web developer building intuitive and dynamic user experiences.
           </span>
         </h1>
       </div>
