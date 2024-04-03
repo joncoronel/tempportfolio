@@ -136,14 +136,15 @@ function DesktopTab({ label, isActive, setActiveElement, ...rest }) {
       )}
       {...rest}
     >
-      <div
-        className={classNames(
-          "block h-1 w-1 rounded-full transition-transform duration-200",
-          isActive
-            ? "scale-100 bg-secondary-500 group-focus:bg-secondary-400"
-            : "scale-0 bg-gray-600 group-focus:scale-100",
-        )}
-      ></div>
+      {rest.icon && (
+        <div
+          className={`flex items-center justify-center text-secondary-500 ${
+            isActive ? "text-secondary-500" : "text-secondary-600"
+          }`}
+        >
+          {rest.icon}
+        </div>
+      )}
       {label}
     </Link>
   );

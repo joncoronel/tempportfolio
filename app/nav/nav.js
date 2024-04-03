@@ -7,10 +7,29 @@ import debounce from "lodash.debounce";
 import { useState } from "react";
 import { usePathname } from "next/navigation";
 
+import {
+  SolarWidget2Linear,
+  SolarUserRoundedLinear,
+  SolarChatRoundLinear,
+} from "../components/icons/icons";
+
 const items = [
-  { label: "about", href: "/#about" },
-  { label: "projects", href: "/#projects" },
-  { label: "contact", href: "/#contact" },
+  {
+    label: "about",
+    href: "/#about",
+    icon: <SolarUserRoundedLinear className="h-5 w-5" />,
+  },
+  {
+    label: "projects",
+    href: "/#projects",
+    icon: <SolarWidget2Linear className="h-5 w-5" />,
+  },
+
+  {
+    label: "contact",
+    href: "/#contact",
+    icon: <SolarChatRoundLinear className="h-5 w-5" />,
+  },
 ];
 
 const handleScroll = () => {

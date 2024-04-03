@@ -12,7 +12,7 @@ export default function Logo() {
       <Image
         src={logolight}
         alt="Portfolio Logo"
-        className="h-5 w-auto cursor-pointer drop-shadow-logo-glow sm:h-5 "
+        className="h-5 w-auto cursor-pointer  sm:h-5 "
         priority
       />
 
