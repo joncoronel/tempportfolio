@@ -80,9 +80,8 @@ export default function CharmingTabs({ items, selectedIndex }) {
                   transform: `translateX(calc(${
                     mousePosition.x ? (mousePosition.x - 0.5) * 100 : 0
                   }%))`,
-                  backgroundImage: activeX
-                    ? " radial-gradient(circle at 50% 50%, hsl(var(--nextui-secondary-200)/.4), transparent 70%) "
-                    : undefined,
+                  backgroundImage:
+                    " radial-gradient(circle at 50% 50%, hsl(var(--nextui-secondary-200)/.4), transparent 70%) ",
                 }}
               ></div>
               <div className="relative flex items-center rounded-full bg-primary-600/90 px-2">
