@@ -2,7 +2,7 @@ import PulseButton from "../../components/ui/PulseButton";
 
 export default function Hero() {
   return (
-    <header className="mt-[14rem] flex w-full max-w-5xl flex-col justify-center  px-4">
+    <header className="z-[1] mt-[14rem] flex w-full max-w-5xl flex-col justify-center  px-4">
       <div className="flex max-w-2xl flex-col items-center justify-center">
         <h1 className=" text-4xl font-bold text-primary-400">
           Jonathan Coronel.{" "}
