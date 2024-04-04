@@ -48,6 +48,7 @@ export const PrevButton = (props) => {
 
   return (
     <button
+      aria-label={"Previous Image"}
       className={`${styles.emblaButton} z-[1] flex size-10 items-center justify-center text-secondary-600 transition-opacity disabled:opacity-50`}
       type="button"
       {...restProps}
@@ -62,6 +63,7 @@ export const NextButton = (props) => {
 
   return (
     <button
+      aria-label={"Next Image"}
       className={`${styles.emblaButton} z-[1] flex size-10 items-center justify-center text-secondary-600 transition-opacity disabled:opacity-50`}
       type="button"
       {...restProps}
