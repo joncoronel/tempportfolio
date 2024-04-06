@@ -1,4 +1,6 @@
-import Overman from "@/public/images/projects/overman.webp";
+import Home from "@/public/images/projects/home.webp";
+import Dashboard from "@/public/images/projects/dashboard.webp";
+import Compare from "@/public/images/projects/compare.webp";
 import PulseButton from "@/app/components/ui/PulseButton";
 import {
   SiNextdotjs,
@@ -14,9 +16,9 @@ import NextAuthLogo from "./logo";
 const LogoSize = "2rem";
 
 const images = [
-  { label: "Overman Home Page", src: Overman },
-  { label: "Overman Dashboard", src: Overman },
-  { label: "Overman Compare Page", src: Overman },
+  { label: "Overman Home Page", src: Home },
+  { label: "Overman Dashboard", src: Dashboard },
+  { label: "Overman Compare Page", src: Compare },
 ];
 
 const OPTIONS = {};
