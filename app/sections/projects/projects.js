@@ -10,7 +10,7 @@ const projects = [
     image: "image",
   },
   {
-    title: "AdvancedCC",
+    title: "ACC",
     description:
       "This is the description for the second project that will be reused.",
     image: "image",

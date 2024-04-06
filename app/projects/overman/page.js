@@ -8,15 +8,15 @@ import {
   SiFramer,
 } from "react-icons/si";
 
-import Carousel from "./carousel";
+import Carousel from "../carousel";
 import NextAuthLogo from "./logo";
 
 const LogoSize = "2rem";
 
 const images = [
   { label: "Overman Home Page", src: Overman },
-  { label: "Overman Nexus", src: Overman },
-  { label: "Overman Nexus", src: Overman },
+  { label: "Overman Dashboard", src: Overman },
+  { label: "Overman Compare Page", src: Overman },
 ];
 
 const OPTIONS = {};
@@ -53,22 +53,24 @@ export default function OvermanProject() {
         {buttons()}
       </Carousel>
 
-      <div className="flex max-w-4xl flex-col flex-wrap justify-center gap-8">
-        <p className=" text-secondary-100">
+      <div className="flex max-w-4xl flex-col flex-wrap justify-center gap-8 text-primary-100">
+        <p className="">
           Overman Nexus is a Overwatch 2 stats platform that allows players to
           record their stats, compare with other players, and view their
           progress over time. The platform is built with Next.js and Supabase
           for the backend.
         </p>
 
-        <p className="text-secondary-100">
+        <p className="">
           The idea for Overman Nexus came about after existing stat tracking
           solutions were missing key features, mainly the ability to track stats
           over time. So I set out to build a platform focused mainly on that
           missing functionality.
         </p>
-        <div className="text-secondary-100">
-          <h3 className="mb-4 text-lg font-bold">Core Features:</h3>
+        <div className="">
+          <h3 className="mb-4 text-lg font-bold text-secondary-500">
+            Core Features:
+          </h3>
           <ul className="flex flex-col gap-2">
             <li>
               <span className=" font-medium text-secondary-500">
@@ -93,8 +95,10 @@ export default function OvermanProject() {
             </li>
           </ul>
         </div>
-        <div className="font-nunito text-sm text-secondary-100">
-          <h3 className="mb-4 text-lg font-bold ">Technologies Used:</h3>
+        <div className="font-nunito text-sm">
+          <h3 className="mb-4 text-lg font-bold text-secondary-500">
+            Technologies Used:
+          </h3>
           <ul className="flex flex-row flex-wrap gap-6 ">
             <li className="flex flex-col items-center gap-2 ">
               <SiHtml5 size={LogoSize} className="text-secondary-500" />

@@ -18,7 +18,7 @@ export default function About() {
         A Little About Me
         <div className=" h-[1px] w-full bg-primary-500"></div>
       </h1>
-      <div className="mt-16 flex flex-col gap-4 text-primary-200">
+      <div className="mt-16 flex flex-col gap-4 text-primary-100">
         <p className="max-w-4xl text-left  text-lg">
           Hi, I&apos;m Jonathan Coronel, a web developer with a passion for
           building intuitive and dynamic user experiences. When I&apos;m not
