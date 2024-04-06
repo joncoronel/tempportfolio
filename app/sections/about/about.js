@@ -13,11 +13,12 @@ const ListItem = ({ children }) => (
 
 export default function About() {
   return (
-    <div className="mx-auto flex max-w-fit flex-col items-center">
-      <h1 className=" text-4xl font-extrabold  shadow-secondary-300/60 text-shadow-heading">
-        About Me
+    <>
+      <h1 className="flex items-center gap-2 whitespace-nowrap text-3xl font-extrabold shadow-secondary-300/60 text-shadow-heading">
+        A Little About Me
+        <div className=" h-[1px] w-full bg-primary-500"></div>
       </h1>
-      <div className="mt-16 flex flex-col gap-4 text-primary-200">
+      <div className="mt-16 flex flex-col gap-4 text-primary-100">
         <p className="max-w-4xl text-left  text-lg">
           Hi, I&apos;m Jonathan Coronel, a web developer with a passion for
           building intuitive and dynamic user experiences. When I&apos;m not
@@ -36,6 +37,6 @@ export default function About() {
           <ListItem>Next.js</ListItem>
         </ul>
       </div>
-    </div>
+    </>
   );
 }

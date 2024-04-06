@@ -10,7 +10,7 @@ const projects = [
     image: "image",
   },
   {
-    title: "AdvancedCC",
+    title: "ACC",
     description:
       "This is the description for the second project that will be reused.",
     image: "image",
@@ -26,8 +26,9 @@ const projects = [
 export default function Projects() {
   return (
     <>
-      <h2 className="flex justify-center text-4xl font-extrabold  shadow-secondary-300/60 text-shadow-heading">
+      <h2 className="flex items-center gap-2 whitespace-nowrap  text-3xl font-extrabold  shadow-secondary-300/60 text-shadow-heading">
         Projects
+        <div className=" h-[1px] w-full bg-primary-500"></div>
       </h2>
       <div className="mt-16 flex flex-col items-center justify-center gap-12">
         {projects.map((project) => (

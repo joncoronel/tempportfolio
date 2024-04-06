@@ -7,28 +7,47 @@ import debounce from "lodash.debounce";
 import { useState } from "react";
 import { usePathname } from "next/navigation";
 
+import {
+  SolarWidget2Linear,
+  SolarUserRoundedLinear,
+  SolarChatRoundLinear,
+} from "../components/icons/icons";
+
 const items = [
-  { label: "about", href: "/#about" },
-  { label: "projects", href: "/#projects" },
-  { label: "contact", href: "/#contact" },
+  {
+    label: "about",
+    href: "/#about",
+    icon: <SolarUserRoundedLinear className="h-5 w-5" />,
+  },
+  {
+    label: "projects",
+    href: "/#projects",
+    icon: <SolarWidget2Linear className="h-5 w-5" />,
+  },
+
+  {
+    label: "contact",
+    href: "/#contact",
+    icon: <SolarChatRoundLinear className="h-5 w-5" />,
+  },
 ];
 
 const handleScroll = () => {
   if (window.innerWidth < 640) {
     const logoHeight = document.getElementById("Logo")?.offsetHeight;
-    const header = document.querySelector("header");
+    const nav = document.querySelector("nav");
     const translateYValue =
       logoHeight +
       parseFloat(getComputedStyle(document.documentElement).fontSize);
 
     if (window.scrollY > logoHeight) {
-      header.style.transform = `translateY(-${translateYValue}px)`;
+      nav.style.transform = `translateY(-${translateYValue}px)`;
     } else {
-      header.style.transform = "translateY(0)";
+      nav.style.transform = "translateY(0)";
     }
   } else {
-    const header = document.querySelector("header");
-    header.style.transform = "translateY(0)";
+    const nav = document.querySelector("nav");
+    nav.style.transform = "translateY(0)";
   }
 };
 
@@ -36,7 +55,7 @@ const handleResize = debounce(() => {
   handleScroll();
 }, 300);
 
-export default function Header() {
+export default function Nav() {
   const [activeTab, setActiveTab] = useState(null);
 
   const pathname = usePathname();
