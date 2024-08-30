@@ -3,7 +3,8 @@ import "./globals.css";
 import { Providers } from "./providers";
 import NavParent from "./nav/navparent";
 import { Toaster } from "sonner";
-import Script from "next/script";
+// import Script from "next/script";
+import { OpenPanelComponent } from "@openpanel/nextjs";
 
 const nunito = Nunito({
   subsets: ["latin"],
@@ -52,11 +53,19 @@ export default function RootLayout({ children }) {
           </footer>
         </Providers>
       </body>
-      <Script
+      {/* <Script
         async
         src="https://us.umami.is/script.js"
         data-website-id="44f93001-e590-4d81-b637-50e14a269151"
         strategy="afterInteractive"
+      /> */}
+      <OpenPanelComponent
+        clientId="8beeb76b-7fed-4c16-8022-cb7fd7306cb0"
+        trackScreenViews={true}
+        // trackAttributes={true}
+        // trackOutgoingLinks={true}
+        // If you have a user id, you can pass it here to identify the user
+        // profileId={'123'}
       />
 
       {/* <Script
