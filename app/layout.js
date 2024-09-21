@@ -67,13 +67,6 @@ export default function RootLayout({ children }) {
         // If you have a user id, you can pass it here to identify the user
         // profileId={'123'}
       />
-
-      {/* <Script
-        src="https://beamanalytics.b-cdn.net/beam.min.js"
-        data-token="a33dc8c2-33ae-44b0-9e87-e3523e69b4c5"
-        async
-        strategy="afterInteractive"
-      /> */}
     </html>
   );
 }
